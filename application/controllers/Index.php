@@ -1,8 +1,13 @@
 <?php
 
-class IndexController extends Yaf_Controller_Abstract{
+class IndexController extends Base_Controller_Page {
+    //封装了construct()方法
+    public function init() {
+        $this->setNeedLogin(false);
+        parent::init();
+    }
     public function indexAction(){
-        echo "this is fucking yaf";
-        $this->getView()->assign("content","Helloworld");
+     //  $a = new UserModel();
+
     }
 }
