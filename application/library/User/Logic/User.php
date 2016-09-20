@@ -15,10 +15,13 @@ class User_Logic_User{
         $inputParam['email']    = $email;
         $inputParam['password'] = md5($password);
         $info = $userModel->getUserAccount($inputParam);
-        User_Api::checkLogin();
-        return $info;
+        if(!empty($info)){
+            Yaf_Session::getInstance()->set(User_Keys::getLoginUserKey(),$info['id']);
+            User_Api::checkLogin();
+            return true;
+        }
+        return false;
         //$info = $userModel->insertUserAccount($inputParam);
-
     }
 
 }

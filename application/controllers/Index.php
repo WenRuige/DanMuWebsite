@@ -8,6 +8,6 @@ class IndexController extends Base_Controller_Page {
     }
     public function indexAction(){
      //  $a = new UserModel();
-
+        $this->getView()->display('index/index.tpl');
     }
 }

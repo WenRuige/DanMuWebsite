@@ -13,8 +13,7 @@ class LoginController extends Base_Controller_Page {
     }
 
     public function indexAction(){
-
-        $this->getView()->display('login/login.phtml');
+        $this->getView()->display('login/login.tpl');
     }
     //登录界面
     public function loginAction(){
@@ -22,7 +21,12 @@ class LoginController extends Base_Controller_Page {
         $password =  Base_Request::getRequest('password',null);
         //实例化user逻辑层
         $userObj  = new User_logic_User();
-        $data = $userObj -> userLogin($email,$password);
-        var_dump($data);
+        $flag = $userObj -> userLogin($email,$password);
+        if($flag){
+            echo "123";
+        }else{
+            echo "登录错误";
+        }
+
     }
 }

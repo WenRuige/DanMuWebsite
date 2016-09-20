@@ -39,6 +39,13 @@ class ComposerStaticInit3372c0043ede5a22f199c8e641334c95
                 0 => __DIR__ . '/..' . '/psr/log',
             ),
         ),
+        'I' => 
+        array (
+            'Identicon' => 
+            array (
+                0 => __DIR__ . '/..' . '/yzalis/identicon/src',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
