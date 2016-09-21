@@ -15,6 +15,7 @@ class LoginController extends Base_Controller_Page {
     public function indexAction(){
         $this->getView()->display('login/login.tpl');
     }
+
     //登录界面
     public function loginAction(){
         $email =  Base_Request::getRequest('email',null);
@@ -27,6 +28,5 @@ class LoginController extends Base_Controller_Page {
         }else{
             echo "登录错误";
         }
-
     }
 }

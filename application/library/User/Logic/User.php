@@ -5,7 +5,6 @@
  * Date: 2016/9/19
  * Time: 15:09
  */
-
 //用户逻辑层
 class User_Logic_User{
     //用户登录界面
@@ -21,7 +20,25 @@ class User_Logic_User{
             return true;
         }
         return false;
-        //$info = $userModel->insertUserAccount($inputParam);
     }
-
+    public function checkEmail($email = ''){
+        try{
+            $userObj = new UserModel();
+            $info = $userObj->checkEmail($email);
+            $result = array(
+                "CODE"    => Base_Error::MODEL_RETURN_SUCCESS,
+                "MESSAGE" => '成功!',
+                "RES"     => $info
+            );
+            return $result;
+        }catch (Exception $e){
+            $log = new Base_Log();
+            $log->ERROR($e->getMessage());
+            $result = array(
+                "CODE"    => Base_Error::MYSQL_EXECUTE_ERROR,
+                "MESSAGE" => $e->getMessage(),
+            );
+            return $result;
+        }
+    }
 }

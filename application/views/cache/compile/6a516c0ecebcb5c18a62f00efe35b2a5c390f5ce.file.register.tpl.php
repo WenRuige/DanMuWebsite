@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-21 08:31:01
-         compiled from "/home/vagrant/Code/yaf_personal/application/views/login/login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:177736072457e1d4c58d2002-82044943%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-21 11:12:21
+         compiled from "/home/vagrant/Code/yaf_personal/application/views/register/register.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:128109457157e1fa95f0bc04-68945753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'e4827f11e85515caddce64cb6171a56e63a4266a' => 
+    '6a516c0ecebcb5c18a62f00efe35b2a5c390f5ce' => 
     array (
-      0 => '/home/vagrant/Code/yaf_personal/application/views/login/login.tpl',
-      1 => 1474417857,
+      0 => '/home/vagrant/Code/yaf_personal/application/views/register/register.tpl',
+      1 => 1474427442,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '177736072457e1d4c58d2002-82044943',
+  'nocache_hash' => '128109457157e1fa95f0bc04-68945753',
   'function' => 
   array (
   ),
@@ -47,13 +47,20 @@ $_smarty_tpl->decodeProperties(array (
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-envelope"></label>
-                            <input id="email" type="email" name="email" placeholder="邮箱" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="email" id="email" placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <p id="signEmail"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
-                            <input id="password" type="password" name="password" placeholder="密码" tabindex="2" class="form-control input-medium">
+                            <input id="password" type="password" id="password" placeholder="密码" tabindex="2" class="form-control input-medium">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label for="password" class="control-label fa fa-asterisk"></label>
+                            <input id="password" type="password" id="repassword" placeholder="确认密码" tabindex="2" class="form-control input-medium">
                         </div>
                     </div>
                 </div>
@@ -66,9 +73,10 @@ $_smarty_tpl->decodeProperties(array (
     </div>
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/logicJs/register/register.js"></script>
     <script>
         $(function() {
-
             $('#login #password').focus(function() {
                 $('#owl-login').addClass('password');
             }).blur(function() {

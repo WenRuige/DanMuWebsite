@@ -22,4 +22,9 @@ class UserModel extends BaseModel {
         $res = $this->db->from('user')->select(null)->select("*")->where($inputParam)->fetch();
         return $res;
     }
+    //检查email是否重复
+    public function checkEmail($email){
+        $res = $this->db->from('user')->select('email')->where('email',$email)->count();
+        return $res;
+    }
 }

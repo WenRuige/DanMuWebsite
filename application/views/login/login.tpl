@@ -5,7 +5,7 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title></title>
-    <link rel="stylesheet" href="../../plugins/login/css/lrtk.css">
+    <link rel="stylesheet" href="{$stroot}/plugins/login/css/lrtk.css">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
 
         </div>
     </div>
-    <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script>
         $(function() {
 
