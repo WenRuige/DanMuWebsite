@@ -1,23 +1,23 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-19 19:15:12
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-21 08:22:31
          compiled from "/home/vagrant/Code/yaf_personal/application/views/index/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:110582381157dfc8c0e20627-05825361%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:187189070757e144f106a049-00267467%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1424955da45ff3753408aca749aabca987a94831' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/index/index.tpl',
-      1 => 1474284249,
+      1 => 1474381040,
       2 => 'file',
     ),
     'c6ad91c6c212934ab253c432e6c4d0056a375cce' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/layouts/index.tpl',
-      1 => 1474283788,
+      1 => 1474417349,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '110582381157dfc8c0e20627-05825361',
+  'nocache_hash' => '187189070757e144f106a049-00267467',
   'function' => 
   array (
   ),
@@ -32,29 +32,37 @@ $_smarty_tpl->decodeProperties(array (
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/css/skins/_all-skins.min.css">
     <!--加载回到顶部-->
-    <link rel="stylesheet" href="../../css/top.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/css/top.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
 
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/js/html5shiv.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/js/respond.min.js"></script>
     <![endif]-->
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-red layout-top-nav">
+<body class="hold-transition skin-black layout-top-nav">
 <div class="wrapper">
 
     <header class="main-header">
@@ -68,7 +76,7 @@ $_smarty_tpl->decodeProperties(array (
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                <!--<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">Link</a></li>
@@ -90,7 +98,7 @@ $_smarty_tpl->decodeProperties(array (
                             <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
                         </div>
                     </form>
-                </div>
+                </div>-->
                 <!-- /.navbar-collapse -->
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
@@ -195,14 +203,16 @@ $_smarty_tpl->decodeProperties(array (
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <img src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">Alexander Pierce</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
                                         Alexander Pierce - Web Developer
@@ -261,15 +271,14 @@ $_smarty_tpl->decodeProperties(array (
             <!-- Main content -->
             
     <section class="content">
-
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="box box-solid">
-                    <div class="box-header with-border">
+                   <!-- <div class="box-header with-border">
                         <h3 class="box-title">Carousel</h3>
-                    </div>
+                    </div>-->
                     <!-- /.box-header -->
-                    <div class="box-body">
+                    <div class="box-body" >
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -311,9 +320,110 @@ $_smarty_tpl->decodeProperties(array (
                 </div>
                 <!-- /.box -->
             </div>
+            <div class="col-md-5">
+                <div class="box-footer">
+                    <ul class="mailbox-attachments clearfix">
+                        <li>
+                            <span class="mailbox-attachment-icon has-img">
+                                <img src="../../dist/img/photo1.png" alt="Attachment">
+                            </span>
+                            <div class="mailbox-attachment-info" style="height: 28px">
+                                <a href="#" class="mailbox-attachment-name" style="height:28px"><i class="fa fa-camera"></i> PHOTO1.png &nbsp;点击量:100000</a>
+                                <!--<span class="mailbox-attachment-size">
+                          2.67 MB
+                          <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
+                        </span>-->
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mailbox-attachment-icon has-img">
+                                <img src="../../dist/img/photo2.png" alt="Attachment"></span>
+
+                            <div class="mailbox-attachment-info" style="height:28px">
+                                <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo2.png</a>
+                                <!--<span class="mailbox-attachment-size">
+                          1.9 MB
+                          <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
+                        </span>-->
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo2.png" alt="Attachment"></span>
+
+                            <div class="mailbox-attachment-info" style="height:28px">
+                                <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo2.png</a>
+                               <!-- <span class="mailbox-attachment-size">
+                          1.9 MB
+                          <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
+                        </span>-->
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo2.png" alt="Attachment"></span>
+
+                            <div class="mailbox-attachment-info" style="height:28px">
+                                <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo2.png</a>
+                                <!-- <span class="mailbox-attachment-size">
+                           1.9 MB
+                           <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
+                         </span>-->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                </div>
             <!-- /.col -->
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">推荐视频/h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
+                                <div class="caption">
+                                    <p>一些示例文本。一些示例文本。</p>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+                </div>
+
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header">
+                        <h3 class="box-title">视频动漫/h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
+                                <div class="caption">
+                                    <p>一些示例文本。一些示例文本。</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -339,17 +449,24 @@ $_smarty_tpl->decodeProperties(array (
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="../../js/top.js"></script>
+<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/js/top.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/bootstrap/js/bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
+<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
+<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/js/demo.js"></script>
 </body>
 </html>

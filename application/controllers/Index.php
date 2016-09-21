@@ -8,6 +8,7 @@ class IndexController extends Base_Controller_Page {
     }
     public function indexAction(){
      //  $a = new UserModel();
+       //echo Base_Config::getConfig('web')->stroot;
         $this->getView()->display('index/index.tpl');
     }
 }

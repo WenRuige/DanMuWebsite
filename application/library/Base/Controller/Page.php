@@ -15,7 +15,11 @@ class Base_Controller_Page extends Base_Controller_Abstract {
                 //用户没有进行登录的话直接跳转
             $this->redirect(Base_Config::getConfig('web')->loginUrl);
         }
+        //指定静态文件加载路径
+        $this->getView()->assign('stroot',Base_Config::getConfig('web')->stroot);
+
     }
+
 
 
 }
