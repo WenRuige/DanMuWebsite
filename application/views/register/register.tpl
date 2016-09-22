@@ -14,7 +14,7 @@
 
     <div class="wrapper">
         <div class="login">
-            <form action="" method="post" class="container offset1 loginform">
+            <form  class="container offset1 loginform">
                 <div id="owl-login">
                     <div class="hand"></div>
                     <div class="hand hand-r"></div>
@@ -27,25 +27,27 @@
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-envelope"></label>
-                            <input id="email" type="email" id="email" placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="email"  placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1" autofocus="autofocus" class="form-control input-medium">
                             <p id="signEmail"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
-                            <input id="password" type="password" id="password" placeholder="密码" tabindex="2" class="form-control input-medium">
+                            <input  type="password" id="password" placeholder="密码" onblur="registerInfo.checkPassword()" tabindex="2" class="form-control input-medium">
+                            <p id="signPassword"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
-                            <input id="password" type="password" id="repassword" placeholder="确认密码" tabindex="2" class="form-control input-medium">
+                            <input  type="password" id="repassword" placeholder="确认密码" onblur="registerInfo.checkRePassword()" tabindex="2" class="form-control input-medium">
+                            <p id="signRePassword"></p>
                         </div>
                     </div>
                 </div>
                 <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
-                    <button type="submit" tabindex="4" class="btn btn-primary">登录</button>
+                    <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>
             </form>
 

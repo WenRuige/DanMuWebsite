@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-21 08:22:31
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-22 23:33:20
          compiled from "/home/vagrant/Code/yaf_personal/application/views/index/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:187189070757e144f106a049-00267467%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:28915645257e3f9c0cd7152-94512562%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1424955da45ff3753408aca749aabca987a94831' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/index/index.tpl',
-      1 => 1474381040,
+      1 => 1474558400,
       2 => 'file',
     ),
     'c6ad91c6c212934ab253c432e6c4d0056a375cce' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '187189070757e144f106a049-00267467',
+  'nocache_hash' => '28915645257e3f9c0cd7152-94512562',
   'function' => 
   array (
   ),
@@ -272,7 +272,7 @@ $_smarty_tpl->decodeProperties(array (
             
     <section class="content">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-sm-7 col-md-5 " >
                 <div class="box box-solid">
                    <!-- <div class="box-header with-border">
                         <h3 class="box-title">Carousel</h3>
@@ -287,21 +287,21 @@ $_smarty_tpl->decodeProperties(array (
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
+                                    <img src="../../dist/img/photo2.png" alt="First slide">
 
                                     <div class="carousel-caption">
                                         First Slide
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+                                    <img src="../../dist/img/photo2.png" alt="Second slide">
 
                                     <div class="carousel-caption">
                                         Second Slide
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+                                    <img src="../../dist/img/photo2.png" alt="Third slide">
 
                                     <div class="carousel-caption">
                                         Third Slide
@@ -320,65 +320,64 @@ $_smarty_tpl->decodeProperties(array (
                 </div>
                 <!-- /.box -->
             </div>
-            <div class="col-md-5">
-                <div class="box-footer">
-                    <ul class="mailbox-attachments clearfix">
-                        <li>
-                            <span class="mailbox-attachment-icon has-img">
-                                <img src="../../dist/img/photo1.png" alt="Attachment">
-                            </span>
-                            <div class="mailbox-attachment-info" style="height: 28px">
-                                <a href="#" class="mailbox-attachment-name" style="height:28px"><i class="fa fa-camera"></i> PHOTO1.png &nbsp;点击量:100000</a>
-                                <!--<span class="mailbox-attachment-size">
-                          2.67 MB
-                          <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                        </span>-->
-                            </div>
-                        </li>
-                        <li>
-                            <span class="mailbox-attachment-icon has-img">
-                                <img src="../../dist/img/photo2.png" alt="Attachment"></span>
+            <div class="col-md-7 col-sm-1">
+                <div class="box box-danger">
 
-                            <div class="mailbox-attachment-info" style="height:28px">
-                                <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo2.png</a>
-                                <!--<span class="mailbox-attachment-size">
-                          1.9 MB
-                          <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                        </span>-->
-                            </div>
-                        </li>
-                        <li>
-                            <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo2.png" alt="Attachment"></span>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-sm-2 col-md-4">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
 
-                            <div class="mailbox-attachment-info" style="height:28px">
-                                <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo2.png</a>
-                               <!-- <span class="mailbox-attachment-size">
-                          1.9 MB
-                          <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                        </span>-->
                             </div>
-                        </li>
-                        <li>
-                            <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo2.png" alt="Attachment"></span>
+                        </div>
+                        <div class="col-sm-2 col-md-4">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
 
-                            <div class="mailbox-attachment-info" style="height:28px">
-                                <a href="#" class="mailbox-attachment-name"><i class="fa fa-camera"></i> photo2.png</a>
-                                <!-- <span class="mailbox-attachment-size">
-                           1.9 MB
-                           <a href="#" class="btn btn-default btn-xs pull-right"><i class="fa fa-cloud-download"></i></a>
-                         </span>-->
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="col-sm-2 col-md-4">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-4">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-4">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-4">
+                            <div class="thumbnail">
+                                <img src="../../dist/img/photo2.png"
+                                     alt="通用的占位符缩略图">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
                 </div>
                 </div>
             <!-- /.col -->
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-9">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">推荐视频/h3>
+                        <h3 class="box-title">推荐视频</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -395,15 +394,76 @@ $_smarty_tpl->decodeProperties(array (
                     </div>
                     <!-- /.box-body -->
                 </div>
+                </div>
 
+            <div class="col-md-3">
+                <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Recently Added Products</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <ul class="products-list product-list-in-box">
+                        <li class="item">
+                            <div class="product-img">
+                                <img src="dist/img/default-50x50.gif" alt="Product Image">
+                            </div>
+                            <div class="product-info">
+                                <a href="javascript:void(0)" class="product-title">Samsung TV
+                                    <span class="label label-warning pull-right">$1800</span></a>
+                                <span class="product-description">
+                          Samsung 32" 1080p 60Hz LED Smart HDTV.
+                        </span>
+                            </div>
+                        </li>
+
+                        <li class="item">
+                            <div class="product-img">
+                                <img src="dist/img/default-50x50.gif" alt="Product Image">
+                            </div>
+                            <div class="product-info">
+                                <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
+                                <span class="product-description">
+                          Xbox One Console Bundle with Halo Master Chief Collection.
+                        </span>
+                            </div>
+                        </li>
+                        <!-- /.item -->
+                        <li class="item">
+                            <div class="product-img">
+                                <img src="dist/img/default-50x50.gif" alt="Product Image">
+                            </div>
+                            <div class="product-info">
+                                <a href="javascript:void(0)" class="product-title">PlayStation 4
+                                    <span class="label label-success pull-right">$399</span></a>
+                                <span class="product-description">
+                          PlayStation 4 500GB Console (PS4)
+                        </span>
+                            </div>
+                        </li>
+                        <!-- /.item -->
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="box-footer text-center">
+                    <a href="javascript:void(0)" class="uppercase">View All Products</a>
+                </div>-->
+                <!-- /.box-footer -->
+            </div>
                 </div>
 
             </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-9">
                 <div class="box box-danger">
                     <div class="box-header">
-                        <h3 class="box-title">视频动漫/h3>
+                        <h3 class="box-title">视频动漫</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -421,7 +481,13 @@ $_smarty_tpl->decodeProperties(array (
                     <!-- /.box-body -->
                 </div>
 
+
+
+
             </div>
+            <div class="col-md-3">
+                sss
+                </div>
 
         </div>
 

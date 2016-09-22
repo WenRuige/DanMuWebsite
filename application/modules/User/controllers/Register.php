@@ -35,4 +35,10 @@ class RegisterController extends Base_Controller_Page {
             echo json_encode($result);
         }
     }
+    //注册该id
+    public function registerAccountAction(){
+        $email     = Base_Request::get('email',null);
+        $password  = Base_Request::get('password',null);
+
+    }
 }

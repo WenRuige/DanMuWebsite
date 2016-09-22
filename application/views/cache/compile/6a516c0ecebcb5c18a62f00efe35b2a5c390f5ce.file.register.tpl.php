@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-21 11:12:21
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-22 21:35:08
          compiled from "/home/vagrant/Code/yaf_personal/application/views/register/register.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:128109457157e1fa95f0bc04-68945753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:84596315557e3de0c9063c3-01730962%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6a516c0ecebcb5c18a62f00efe35b2a5c390f5ce' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/register/register.tpl',
-      1 => 1474427442,
+      1 => 1474551306,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '128109457157e1fa95f0bc04-68945753',
+  'nocache_hash' => '84596315557e3de0c9063c3-01730962',
   'function' => 
   array (
   ),
@@ -34,7 +34,7 @@ $_smarty_tpl->decodeProperties(array (
 
     <div class="wrapper">
         <div class="login">
-            <form action="" method="post" class="container offset1 loginform">
+            <form  class="container offset1 loginform">
                 <div id="owl-login">
                     <div class="hand"></div>
                     <div class="hand hand-r"></div>
@@ -47,25 +47,27 @@ $_smarty_tpl->decodeProperties(array (
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-envelope"></label>
-                            <input id="email" type="email" id="email" placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="email"  placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1" autofocus="autofocus" class="form-control input-medium">
                             <p id="signEmail"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
-                            <input id="password" type="password" id="password" placeholder="密码" tabindex="2" class="form-control input-medium">
+                            <input  type="password" id="password" placeholder="密码" onblur="registerInfo.checkPassword()" tabindex="2" class="form-control input-medium">
+                            <p id="signPassword"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
-                            <input id="password" type="password" id="repassword" placeholder="确认密码" tabindex="2" class="form-control input-medium">
+                            <input  type="password" id="repassword" placeholder="确认密码" onblur="registerInfo.checkRePassword()" tabindex="2" class="form-control input-medium">
+                            <p id="signRePassword"></p>
                         </div>
                     </div>
                 </div>
                 <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
-                    <button type="submit" tabindex="4" class="btn btn-primary">登录</button>
+                    <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>
             </form>
 
