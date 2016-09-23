@@ -1,6 +1,0 @@
-{ "text":"qweqwe","color":"#ffffff","size":"1","position":"0","time":20}
-{ "text":"asdasdasd","color":"#ffffff","size":"1","position":"0","time":50}
-{ "text":"qweqweqwe","color":"#ffffff","size":"1","position":"0","time":67}
-{ "text":"qweqweqw","color":"#ffffff","size":"1","position":"0","time":78}
-{ "text":"qweqweqw","color":"#ffffff","size":"1","position":"0","time":90}
-{ "text":"werfdssdfg","color":"#ffffff","size":"1","position":"0","time":104}{ "text":"adasd","color":"#ffffff","size":"1","position":"0","time":469}{ "text":"sdaf ","color":"#ffffff","size":"1","position":"0","time":21}{ "text":"sdf","color":"#ffffff","size":"1","position":"0","time":42}{ "text":"sdfdsf","color":"#ffffff","size":"1","position":"0","time":65}{ "text":"sadfasdfasdf","color":"#ffffff","size":"1","position":"0","time":93}{ "text":"sdfsdf","color":"#ffffff","size":"1","position":"0","time":142}{ "text":"sdfaf","color":"#ffffff","size":"1","position":"0","time":154}{ "text":"sdfasdfasdf","color":"#ffffff","size":"1","position":"0","time":180}{ "text":"sdfgsfsg","color":"#ffffff","size":"1","position":"0","time":224}{ "text":"dsfgdfg","color":"#ffffff","size":"1","position":"0","time":224}{ "text":"dfgsdfg","color":"#ffffff","size":"1","position":"0","time":224}

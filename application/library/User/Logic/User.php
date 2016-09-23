@@ -41,4 +41,37 @@ class User_Logic_User{
             return $result;
         }
     }
+    //增加用户账户
+    public function insertAccount($email,$password){
+        try{
+            //过期时间为24h
+            $expireTime                      = time()* 60 * 60 * 24;
+            //Token
+            $token                           = md5($email.$password);
+            $data['email']                   = $email;
+            $data['password']                = md5($password);
+            $data['token_expire_time']       = $expireTime;
+            $data['token']                   = $token;
+            $data['created_at']              = date("Y-m-d H:i:s");
+            $file = '111.log';
+            file_put_contents($file,json_encode($data),FILE_APPEND);
+            $userModel  = new UserModel();
+            $info       = $userModel->insertUserAccount($data);
+            $result = array(
+                'CODE'              => Base_Error::MODEL_RETURN_SUCCESS,
+                'MESSAGE'           => '注册成功!',
+                'TOKEN'             => $token,
+                'RES'               => $info
+            );
+            return $result;
+        }catch(Exception $e){
+            $log = new Base_Log();
+            $log->ERROR($e->getMessage());
+            $result = array(
+                "CODE"    => Base_Error::MYSQL_EXECUTE_ERROR,
+                "MESSAGE" => $e->getMessage(),
+            );
+            return $result;
+        }
+    }
 }

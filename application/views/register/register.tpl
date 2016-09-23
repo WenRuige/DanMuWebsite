@@ -46,6 +46,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="/user/register/registerAccount">发送邮件</a>
                 <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
                     <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>

@@ -35,10 +35,29 @@ class RegisterController extends Base_Controller_Page {
             echo json_encode($result);
         }
     }
-    //注册该id
+    //注册用户id
     public function registerAccountAction(){
-        $email     = Base_Request::get('email',null);
-        $password  = Base_Request::get('password',null);
+        $email        = Base_Request::get('email',null);
+        $password     = Base_Request::get('password',null);
+        $repassword   = Base_Request::get('repassword',null);
+        //如果email 为空 或者密码为空 或者确认密码为空 密码不等于确认密码
+        if(empty($email) || empty($password) || empty($repassword) || ($password != $repassword)){
+            $result = array(
+                'CODE'       => Base_Error::ACCOUNT_REGISTER_ERROR,
+                'MESSAGE'    => "注册错误!"
+            );
+            return $result;
+        }
+        $registerLogic = new User_logic_User();
+        //新增用户
+        $info = $registerLogic->insertAccount($email,$password);
+        //如果插入成功的话,向用户发送邮件,
+        if($info['RES']){
+            $mailObj =  new Base_Mail();
+            $res = $mailObj->sendRegisterEmail($email,$info['TOKEN']);
+        }
+    }
+    public function active(){
 
     }
 }

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-22 21:35:08
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-23 08:59:43
          compiled from "/home/vagrant/Code/yaf_personal/application/views/register/register.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:84596315557e3de0c9063c3-01730962%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:90264822557e47e7f39e235-40956474%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6a516c0ecebcb5c18a62f00efe35b2a5c390f5ce' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/register/register.tpl',
-      1 => 1474551306,
+      1 => 1474592378,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '84596315557e3de0c9063c3-01730962',
+  'nocache_hash' => '90264822557e47e7f39e235-40956474',
   'function' => 
   array (
   ),
@@ -66,6 +66,7 @@ $_smarty_tpl->decodeProperties(array (
                         </div>
                     </div>
                 </div>
+                <a href="/user/register/registerAccount">发送邮件</a>
                 <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
                     <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>
