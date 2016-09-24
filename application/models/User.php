@@ -29,7 +29,7 @@ class UserModel extends BaseModel {
     }
     //查询token值
     public function activeAccount($token){
-        $res = $this->db->from('user')->select(null)->select(array('id','token_expire_time'))->where('token',$token)->where('deleted_at',0)->fetch();
+        $res = $this->db->from('user')->select(null)->select(array('id','token_expire_time','status'))->where('token',$token)->where('deleted_at',0)->fetch();
         return $res;
     }
     //更改账户的状态

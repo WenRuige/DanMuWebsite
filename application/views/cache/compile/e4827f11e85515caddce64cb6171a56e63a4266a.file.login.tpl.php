@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-21 08:31:01
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-24 09:38:23
          compiled from "/home/vagrant/Code/yaf_personal/application/views/login/login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:177736072457e1d4c58d2002-82044943%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:119361263457e5d90fc066a4-56105388%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e4827f11e85515caddce64cb6171a56e63a4266a' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/login/login.tpl',
-      1 => 1474417857,
+      1 => 1474681102,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '177736072457e1d4c58d2002-82044943',
+  'nocache_hash' => '119361263457e5d90fc066a4-56105388',
   'function' => 
   array (
   ),
@@ -57,7 +57,7 @@ $_smarty_tpl->decodeProperties(array (
                         </div>
                     </div>
                 </div>
-                <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
+                <div class="form-actions"><a href="/user/forget/index" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="/user/register/index" tabindex="6" class="btn btn-link text-muted">注册</a>
                     <button type="submit" tabindex="4" class="btn btn-primary">登录</button>
                 </div>
             </form>

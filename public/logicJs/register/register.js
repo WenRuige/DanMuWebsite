@@ -48,8 +48,8 @@ var registerInfo = {
             $("#signRePassword").html('密码需要在6~12位之间!');
             return false;
         }
-
             $.get("/user/register/registerAccount",dataObj,function(data){
+                //
                 console.log(data);
                 //data = JSON.parse(data||"null");
                // var sign = data.MESSAGE;

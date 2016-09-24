@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-23 22:56:06
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-24 09:33:36
          compiled from "/home/vagrant/Code/yaf_personal/application/views/register/register.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:195277633557e54286befc88-18036508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:155494531157e5d7f0c66fe2-91133278%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6a516c0ecebcb5c18a62f00efe35b2a5c390f5ce' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/register/register.tpl',
-      1 => 1474642565,
+      1 => 1474680815,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '195277633557e54286befc88-18036508',
+  'nocache_hash' => '155494531157e5d7f0c66fe2-91133278',
   'function' => 
   array (
   ),
@@ -47,7 +47,7 @@ $_smarty_tpl->decodeProperties(array (
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-envelope"></label>
-                            <input id="email" type="email"  placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="email"  placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1"  class="form-control input-medium">
                             <p id="signEmail"></p>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ $_smarty_tpl->decodeProperties(array (
 
 
 
-                <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
+                <div class="form-actions"><a href="/user/login/index" tabindex="6" class="btn btn-link text-muted">登录</a>
                     <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>
             </form>

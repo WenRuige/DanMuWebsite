@@ -76,8 +76,7 @@ class RegisterController extends Base_Controller_Page {
         //验证码
         $verify = Base_Request::get('verify',null);
         $registerLogic  = new User_logic_User();
-        $data = $registerLogic->activeAccount($verify);
-        dump($data);
-        echo $verify;
+        $res = $registerLogic->activeAccount($verify);
+        var_dump($res);
     }
 }

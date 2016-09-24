@@ -27,7 +27,7 @@
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-envelope"></label>
-                            <input id="email" type="email"  placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="email"  placeholder="邮箱" onblur="registerInfo.checkEmail()" tabindex="1"  class="form-control input-medium">
                             <p id="signEmail"></p>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
 
 
 
-                <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
+                <div class="form-actions"><a href="/user/login/index" tabindex="6" class="btn btn-link text-muted">登录</a>
                     <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>
             </form>

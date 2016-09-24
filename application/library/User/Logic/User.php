@@ -6,6 +6,9 @@
  * Time: 15:09
  */
 //用户逻辑层
+//激活逻辑书写,防止忘记 @author:gewenrui Date:2016/9/24
+//接受验证码,查找验证码是否在数据库中,如果不在的话默认为已经激活成功
+//如果当前时间大于有效期,直接删除账号,并跳转到注册页面,让用户重新注册
 class User_Logic_User{
     //用户登录界面
     public function userLogin($email,$password){
@@ -77,6 +80,15 @@ class User_Logic_User{
         try{
             $userModel = new UserModel();
             $account = $userModel->activeAccount($verify);
+            //防止token未删除
+            if($account['status'] == 1){
+                $result = array(
+                  'CODE'      =>  Base_Error::ACCOUNT_REGISTER_ERROR,
+                  'MESSAGE'   =>  '您已经注册成功啦,请登录！'
+                );
+                return $result;
+            }
+
             $nowTime = time();
             //如果当前时间小于过期时间的话,返回true
             $flag = ($account['token_expire_time'] >= $nowTime)?ture:false;
@@ -101,26 +113,39 @@ class User_Logic_User{
                     return $result;
                 }
             }else{
-                //已经过了有效期,删号,
-                $info = $userModel->deleteAccount($account['id']);
-                if($info){
-                    $result = array(
-                      'CODE'      =>   Base_Error::MYSQL_EXECUTE_SUCCESS,
-                      'MESSAGE'   =>   '您的账号已经删除,请重新注册!'
-                    );
-                     return $result;
+                if($account['id']){
+                    //已经过了有效期,删号,
+                    $info = $userModel->deleteAccount($account['id']);
+                    if($info){
+                        $result = array(
+                            'CODE'      =>   Base_Error::MYSQL_EXECUTE_SUCCESS,
+                            'MESSAGE'   =>   '您的账号已经删除,请重新注册!'
+                        );
+                        return $result;
+                    }else{
+                        $result = array(
+                            'CODE'    => Base_Error::MYSQL_EXECUTE_ERROR,
+                            'MESSAGE' => '删除执行错误'
+                        );
+                        return $result;
+                    }
                 }else{
                     $result = array(
-                        'CODE'    => Base_Error::MYSQL_EXECUTE_ERROR,
-                        'MESSAGE' => '删除执行错误'
+                        'CODE'      =>  Base_Error::ACCOUNT_REGISTER_ERROR,
+                        'MESSAGE'   =>  '您已经注册成功啦,请登录！'
                     );
                     return $result;
                 }
-            }
 
+            }
         }catch(Exception $e){
             $log = new Base_Log();
             $log->ERROR($e->getMessage());
+            $result = array(
+                'CODE'    => Base_Error::SYSTEM_LEVEL_ERROR,
+                'MESSAGE' => '系统错误'
+            );
+            return $result;
         }
     }
 }
