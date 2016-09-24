@@ -15,4 +15,5 @@ class Base_Error{
     const MYSQL_EXECUTE_ERROR        = 00003;
     const ACCOUNT_REGISTER_ERROR     = 00004;
     const MAIL_SEND_ERROR            = 00005;
+    const MYSQL_EXECUTE_SUCCESS      = 00006;
 }

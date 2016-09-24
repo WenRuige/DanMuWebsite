@@ -46,7 +46,10 @@
                         </div>
                     </div>
                 </div>
-                <a href="/user/register/registerAccount">发送邮件</a>
+
+
+
+
                 <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
                     <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>
@@ -55,6 +58,24 @@
         </div>
     </div>
     <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var config = {
+                vx: 4,
+                vy:  4,
+                height: 2,
+                width: 2,
+                count: 200,
+                color: "121, 162, 185",
+                stroke: "100,200,180",
+                dist: 6000,
+                e_dist: 20000,
+                max_conn: 10
+            }
+            CanvasParticle(config);
+        }
+    </script>
+    <script type="text/javascript" src="{$stroot}/plugins/background/canvas-particle.js"></script>
     <script src="{$stroot}/logicJs/register/register.js"></script>
     <script>
         $(function() {

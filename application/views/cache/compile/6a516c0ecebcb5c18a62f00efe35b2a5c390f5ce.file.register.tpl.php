@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-23 08:59:43
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-23 22:56:06
          compiled from "/home/vagrant/Code/yaf_personal/application/views/register/register.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:90264822557e47e7f39e235-40956474%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:195277633557e54286befc88-18036508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6a516c0ecebcb5c18a62f00efe35b2a5c390f5ce' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/register/register.tpl',
-      1 => 1474592378,
+      1 => 1474642565,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '90264822557e47e7f39e235-40956474',
+  'nocache_hash' => '195277633557e54286befc88-18036508',
   'function' => 
   array (
   ),
@@ -66,7 +66,10 @@ $_smarty_tpl->decodeProperties(array (
                         </div>
                     </div>
                 </div>
-                <a href="/user/register/registerAccount">发送邮件</a>
+
+
+
+
                 <div class="form-actions"><a href="" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="" tabindex="6" class="btn btn-link text-muted">注册</a>
                     <button type="button" tabindex="4" class="btn btn-primary" onclick="registerInfo.registerAccount()">注册</button>
                 </div>
@@ -76,6 +79,25 @@ $_smarty_tpl->decodeProperties(array (
     </div>
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var config = {
+                vx: 4,
+                vy:  4,
+                height: 2,
+                width: 2,
+                count: 200,
+                color: "121, 162, 185",
+                stroke: "100,200,180",
+                dist: 6000,
+                e_dist: 20000,
+                max_conn: 10
+            }
+            CanvasParticle(config);
+        }
+    </script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/background/canvas-particle.js"></script>
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /logicJs/register/register.js"></script>
     <script>

@@ -44,7 +44,7 @@ var registerInfo = {
         if(dataObj['password'] != dataObj['repassword']){
             $("#signRePassword").html('两次输入的密码不一致!');
             return false;
-        }else if(dataObj['password'].length <=6 && dataObj['repassword'].length >=12){
+        }else if(dataObj['password'].length <=6 || dataObj['repassword'].length >=12){
             $("#signRePassword").html('密码需要在6~12位之间!');
             return false;
         }
