@@ -16,6 +16,6 @@ try {
     $application = new Yaf_Application(APP_CONFIG . "/application.ini", APP_ENVIRON);
     $application->bootstrap()->run();
 } catch (Exception $e) {
-   // var_dump($e->getMessage());
+    var_dump($e->getMessage());
 }
 
