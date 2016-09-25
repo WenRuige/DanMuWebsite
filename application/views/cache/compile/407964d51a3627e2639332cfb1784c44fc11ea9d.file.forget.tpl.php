@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-25 08:41:13
+         compiled from "/private/var/www/yaf_personal/application/views/forget/forget.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:82008618357e71d2943a541-17323816%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '407964d51a3627e2639332cfb1784c44fc11ea9d' => 
+    array (
+      0 => '/private/var/www/yaf_personal/application/views/forget/forget.tpl',
+      1 => 1474682234,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '82008618357e71d2943a541-17323816',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -5,7 +24,8 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title></title>
-    <link rel="stylesheet" href="{$stroot}/plugins/login/css/lrtk.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/login/css/lrtk.css">
 </head>
 <body>
 
@@ -33,14 +53,16 @@
 
                 </div>
                 <div class="form-actions">
-                    <button type="submit" tabindex="4" class="btn btn-primary" onclick="">发送</button>
+                    <button type="submit" tabindex="4" class="btn btn-primary">发送</button>
                 </div>
             </form>
 
         </div>
     </div>
-    <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="{$stroot}/logicJs/forget/forget.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/logicJs/forget/forget.js"></script>
     <script>
         $(function() {
 
