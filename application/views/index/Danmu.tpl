@@ -30,14 +30,13 @@
         ,urlToGetDanmu: ""
         ,urlToPostDanmu: "/danmu/danmu/index"
     });
-    $("#danmup .danmu-div").danmu("addDanmu", [
-        {"text": "这是滚动弹幕", color: "black", size: 5, position: 0, time: 2}
-        , {"text": "我是帽子绿", color: "green", size: 1, position: 0, time: 3}
-        , {"text": "素材火火火火", color: "#f30", size: 1, position: 0, time: 10}
-        , {"text": "这是黄色的弹幕", color: "yellow", size: 1, position: 0, time: 3}
-        , {"text": "好快啊", color: "red", size: 1, position: 0, time: 19}
-        , {"text": "大家好，我是打不死的小强", color: "orange", size: 1, position: 0, time: 23}
 
+    $("#danmup .danmu-div").danmu("addDanmu", [
+          {text:"这是滚动弹幕", color: "black", size: 5, position: 0, time: 2}
+        , {text:"我是帽子绿", color: "green", size: 1, position: 0, time: 3}
+        , {text: "这是黄色的弹幕", color: "yellow", size: 1, position: 0, time: 3}
+        , {text: "好快啊", color: "red", size: 1, position: 0, time: 19}
+        , {text: "大家好，我是打不死的小强", color: "orange", size: 1, position: 0, time: 23}
     ])
 </script>
 <div class="foot">

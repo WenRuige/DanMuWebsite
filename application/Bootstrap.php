@@ -19,6 +19,7 @@ class Bootstrap extends  Yaf_Bootstrap_Abstract{
         // 在这里注册自己的view控制器，例如smarty,firekylin
         $smarty = new Smarty_Adapter(null, Base_Config::getConfig("smarty"));
         Yaf_Dispatcher::getInstance()->setView($smarty);
+        Yaf_Dispatcher::getInstance()->autoRender(FALSE);  // 关闭自动加载模板
     }
     public function _initLog(Yaf_Dispatcher $dispatcher) {
     }

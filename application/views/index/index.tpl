@@ -117,7 +117,6 @@
                                      alt="通用的占位符缩略图">
                                 <div class="caption">
                                     <p>一些示例文本。一些示例文本。</p>
-
                                 </div>
                             </div>
                         </div>
