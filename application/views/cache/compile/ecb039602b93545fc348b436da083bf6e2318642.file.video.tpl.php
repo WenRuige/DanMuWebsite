@@ -1,12 +1,12 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-26 22:46:37
-         compiled from "/private/var/www/yaf_personal/application/views/index/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:96525231157e934cddf71d7-97427449%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-26 22:46:52
+         compiled from "/private/var/www/yaf_personal/application/views/video/video.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:53521741457e934dc5ed918-87483946%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '82371606f1116d38ae7505f72d1ce80029f9ea57' => 
+    'ecb039602b93545fc348b436da083bf6e2318642' => 
     array (
-      0 => '/private/var/www/yaf_personal/application/views/index/index.tpl',
+      0 => '/private/var/www/yaf_personal/application/views/video/video.tpl',
       1 => 1474899769,
       2 => 'file',
     ),
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '96525231157e934cddf71d7-97427449',
+  'nocache_hash' => '53521741457e934dc5ed918-87483946',
   'function' => 
   array (
   ),
@@ -270,226 +270,48 @@ $_smarty_tpl->decodeProperties(array (
 
             <!-- Main content -->
             
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/css/main.css">
     <section class="content">
+        <!---资源占位使用--->
         <div class="row">
-            <div class="col-sm-7 col-md-5 " >
-                <div class="box box-solid">
-                   <!-- <div class="box-header with-border">
-                        <h3 class="box-title">Carousel</h3>
-                    </div>-->
-                    <!-- /.box-header -->
-                    <div class="box-body" >
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="../../dist/img/photo2.png" alt="First slide">
-
-                                    <div class="carousel-caption">
-                                        First Slide
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img src="../../dist/img/photo2.png" alt="Second slide">
-
-                                    <div class="carousel-caption">
-                                        Second Slide
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img src="../../dist/img/photo2.png" alt="Third slide">
-
-                                    <div class="carousel-caption">
-                                        Third Slide
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="fa fa-angle-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                <span class="fa fa-angle-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
+            <div class="col-md-12">
+                </br>
             </div>
-            <div class="col-md-7 col-sm-1">
-                <div class="box box-danger">
-
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="col-sm-2 col-md-4">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-4">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-4">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-4">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-4">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-4">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                </div>
-            <!-- /.col -->
         </div>
+        <!---资源占位使用--->
         <div class="row">
             <div class="col-md-9">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title">推荐视频</h3>
+                <div class="container" style="float:left;">
+                    <div class="demo">
+                        <div id="danmup"></div>
                     </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-                                <div class="caption">
-                                    <p>一些示例文本。一些示例文本。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                </div>
-
-            <div class="col-md-3">
-                <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Recently Added Products</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <ul class="products-list product-list-in-box">
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Samsung TV
-                                    <span class="label label-warning pull-right">$1800</span></a>
-                                <span class="product-description">
-                          Samsung 32" 1080p 60Hz LED Smart HDTV.
-                        </span>
-                            </div>
-                        </li>
-
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
-                                <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">PlayStation 4
-                                    <span class="label label-success pull-right">$399</span></a>
-                                <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                    </ul>
-                </div>
-                <!-- /.box-body -->
-                <!--<div class="box-footer text-center">
-                    <a href="javascript:void(0)" class="uppercase">View All Products</a>
-                </div>-->
-                <!-- /.box-footer -->
-            </div>
-                </div>
 
             </div>
-        <div class="row">
-            <div class="col-md-9">
-                <div class="box box-danger">
-                    <div class="box-header">
-                        <h3 class="box-title">视频动漫</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="thumbnail">
-                                <img src="../../dist/img/photo2.png"
-                                     alt="通用的占位符缩略图">
-                                <div class="caption">
-                                    <p>一些示例文本。一些示例文本。</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-
-
-
-
-            </div>
-            <div class="col-md-3">
-                sss
-                </div>
-
         </div>
-
+            <div class="col-md-3">
+                撒是谁的
+                </div>
+            <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/js/jquery-2.1.4.min.js"></script>
+            <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/js/jquery.shCircleLoader.js"></script>
+            <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/js/jquery.danmu.js"></script>
+            <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/js/main.js"></script>
+            <script>
+                $("#danmup").DanmuPlayer({
+                    src: "<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/video/ocean.mp4",
+                    height: "500px", //区域的高度
+                    width: "700px", //区域的宽度
+                    urlToGetDanmu: "",
+                    urlToPostDanmu: "/video/index/saveDanmu"
+                });
+                $("#danmup .danmu-div").danmu("addDanmu", [
+                ])
+            </script>
     </section>
 
 

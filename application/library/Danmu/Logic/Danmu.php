@@ -30,9 +30,21 @@ class Danmu_Logic_Danmu{
             );
             return $result;
         }
+    }
+    public function getDanmu(){
+        try{
+           $DanmuModle = new DanmuModel();
+            $info = $DanmuModle->getDanmu();
+            $data = array();
+            foreach($info as $key => $value){
+                $data[$key]= $info[$key]['content'];
+            }
 
+            return $data;
+        }catch(Exception $e){
+            $e->getMessage();
 
-
+        }
     }
 
 }

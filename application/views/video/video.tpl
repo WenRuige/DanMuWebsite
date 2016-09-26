@@ -30,7 +30,7 @@
                     src: "{$stroot}/video/ocean.mp4",
                     height: "500px", //区域的高度
                     width: "700px", //区域的宽度
-                    urlToGetDanmu: "",
+                    urlToGetDanmu: "/viedeo/index/shootDanmu",
                     urlToPostDanmu: "/video/index/saveDanmu"
                 });
                 $("#danmup .danmu-div").danmu("addDanmu", [
