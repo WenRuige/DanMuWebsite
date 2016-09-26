@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-
+                    <a href="/user/register/test">sss</a>
 
 
                 <div class="form-actions"><a href="/user/login/index" tabindex="6" class="btn btn-link text-muted">登录</a>

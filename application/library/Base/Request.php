@@ -32,7 +32,7 @@ class Base_Request
         return $default;
     }
 
-    public function valite($type, $val)
+    public static function valite($type, $val)
     {
         if(empty($type)){
             return true;

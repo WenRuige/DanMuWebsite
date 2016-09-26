@@ -91,7 +91,7 @@ class User_Logic_User{
 
             $nowTime = time();
             //如果当前时间小于过期时间的话,返回true
-            $flag = ($account['token_expire_time'] >= $nowTime)?ture:false;
+            $flag = ($account['token_expire_time'] >= $nowTime)?true:false;
             if($flag){
                 //更改用户注册状态,用户注册成功后token,token_expire_time清空
                 $data['token']              = null;
@@ -147,5 +147,20 @@ class User_Logic_User{
             );
             return $result;
         }
+    }
+    //更改密码
+    public function changePassword($email){
+        try{
+
+        }catch(Exception $e){
+            $log  = new Base_Log();
+            $log  ->ERROR($e->getMessage());
+            $result = array(
+                'CODE'     => Base_Error::MYSQL_EXECUTE_ERROR,
+                'MESSAGE'  => '系统错误'
+            );
+            return $result;
+        }
+
     }
 }

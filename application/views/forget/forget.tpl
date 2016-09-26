@@ -27,13 +27,14 @@
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-envelope"></label>
-                            <input id="email" type="email" name="email" placeholder="邮箱" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="email" name="email" placeholder="邮箱" tabindex="1" onblur="forgetInfo.checkEmail()" autofocus="autofocus" class="form-control input-medium">
+                            <p id="signEmail"></p>
                         </div>
                     </div>
 
                 </div>
                 <div class="form-actions">
-                    <button type="submit" tabindex="4" class="btn btn-primary" onclick="">发送</button>
+                    <button type="button" tabindex="4"  onclick="forgetInfo.sendEmail()" class="btn btn-primary">发送</button>
                 </div>
             </form>
 

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-25 08:28:36
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-25 10:48:08
          compiled from "/private/var/www/yaf_personal/application/views/register/register.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:56845405057e71a34bda8f1-75755299%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:179358880557e73ae8424206-58489156%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '0d139a6f213823f68c1ab2b1610c7b0fb0d1cdf1' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/register/register.tpl',
-      1 => 1474680814,
+      1 => 1474771687,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '56845405057e71a34bda8f1-75755299',
+  'nocache_hash' => '179358880557e73ae8424206-58489156',
   'function' => 
   array (
   ),
@@ -67,7 +67,7 @@ $_smarty_tpl->decodeProperties(array (
                     </div>
                 </div>
 
-
+                    <a href="/user/register/test">sss</a>
 
 
                 <div class="form-actions"><a href="/user/login/index" tabindex="6" class="btn btn-link text-muted">登录</a>

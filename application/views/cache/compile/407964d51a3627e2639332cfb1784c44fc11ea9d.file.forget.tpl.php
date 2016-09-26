@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-25 08:41:13
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-25 09:44:16
          compiled from "/private/var/www/yaf_personal/application/views/forget/forget.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:82008618357e71d2943a541-17323816%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:205466919657e72bf0117fa7-91238531%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '407964d51a3627e2639332cfb1784c44fc11ea9d' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/forget/forget.tpl',
-      1 => 1474682234,
+      1 => 1474767841,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '82008618357e71d2943a541-17323816',
+  'nocache_hash' => '205466919657e72bf0117fa7-91238531',
   'function' => 
   array (
   ),
@@ -47,13 +47,14 @@ $_smarty_tpl->decodeProperties(array (
                     <div class="control-group">
                         <div class="controls">
                             <label for="email" class="control-label fa fa-envelope"></label>
-                            <input id="email" type="email" name="email" placeholder="邮箱" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                            <input id="email" type="email" name="email" placeholder="邮箱" tabindex="1" onblur="forgetInfo.checkEmail()" autofocus="autofocus" class="form-control input-medium">
+                            <p id="signEmail"></p>
                         </div>
                     </div>
 
                 </div>
                 <div class="form-actions">
-                    <button type="submit" tabindex="4" class="btn btn-primary">发送</button>
+                    <button type="button" tabindex="4"  onclick="forgetInfo.sendEmail()" class="btn btn-primary">发送</button>
                 </div>
             </form>
 

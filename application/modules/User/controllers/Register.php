@@ -30,7 +30,7 @@ class RegisterController extends Base_Controller_Page {
         }else{
             $content = ($info['RES'] == 1)?"邮箱重复啦!":null;
             $result = array(
-                'CODE'       => Base_Error::MYSQL_EXECUTE_ERROR,
+                'CODE'       => Base_Error::MYSQL_EXECUTE_SUCCESS,
                 'MESSAGE'    => $content
             );
             echo json_encode($result);
@@ -49,6 +49,7 @@ class RegisterController extends Base_Controller_Page {
             );
             return $result;
         }
+
         $registerLogic = new User_logic_User();
         //二次验证,防止已经注册的用户重复注册
         $checkRepeat = $registerLogic->checkEmail($email);
@@ -62,6 +63,7 @@ class RegisterController extends Base_Controller_Page {
         }
         //如果插入成功的话,向用户发送邮件,
         if($info['RES']){
+
             $mailObj =  new Base_Mail();
             $res = $mailObj->sendRegisterEmail($email,$info['TOKEN']);
             if($res['CODE'] == Base_Error::MODEL_RETURN_SUCCESS){
@@ -69,6 +71,12 @@ class RegisterController extends Base_Controller_Page {
             }else{
                 echo json_encode($res);
             }
+        }else{
+            $result = array(
+                'CODE'     => Base_Error::MYSQL_EXECUTE_ERROR,
+                'MESSAGE'  => '数据插入错误'
+            );
+            echo json_encode($result);
         }
     }
     //激活操作
@@ -78,5 +86,10 @@ class RegisterController extends Base_Controller_Page {
         $registerLogic  = new User_logic_User();
         $res = $registerLogic->activeAccount($verify);
         var_dump($res);
+    }
+    public function testAction(){
+        $mailObj = new Base_Mail();
+       $data =  $mailObj->testMailer();
+        var_dump($data);
     }
 }
