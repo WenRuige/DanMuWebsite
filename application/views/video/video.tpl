@@ -18,6 +18,9 @@
 
             </div>
         </div>
+            <div class="col-md-3">
+                撒是谁的
+                </div>
             <script src="{$stroot}/js/jquery-2.1.4.min.js"></script>
             <script src="{$stroot}/js/jquery.shCircleLoader.js"></script>
             <script src="{$stroot}/js/jquery.danmu.js"></script>
@@ -28,7 +31,7 @@
                     height: "500px", //区域的高度
                     width: "700px", //区域的宽度
                     urlToGetDanmu: "",
-                    urlToPostDanmu: "/danmu/danmu/index"
+                    urlToPostDanmu: "/video/index/saveDanmu"
                 });
                 $("#danmup .danmu-div").danmu("addDanmu", [
                     {*{text: "我是帽子绿", color: "green", size: 1, position: 0, time: 3}*}

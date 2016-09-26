@@ -10,10 +10,27 @@ Target Server Type    : MYSQL
 Target Server Version : 50538
 File Encoding         : 65001
 
-Date: 2016-09-24 14:47:43
+Date: 2016-09-26 20:15:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `danmu`
+-- ----------------------------
+DROP TABLE IF EXISTS `danmu`;
+CREATE TABLE `danmu` (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '弹幕id',
+  `video_id` int(10) NOT NULL DEFAULT '0' COMMENT '视频id',
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '内容',
+  `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` tinyint(4) NOT NULL COMMENT '是否删除(0未删除,1已经删除)',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of danmu
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `user`

@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-26 14:24:55
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-26 20:20:06
          compiled from "/home/vagrant/Code/yaf_personal/application/views/video/video.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:81042724757e8bf3701de33-25037161%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:20814545557e91276d0dc65-33399164%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '24a379c7530e1a1c4ea0aa962379f502674d742b' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/video/video.tpl',
-      1 => 1474871094,
+      1 => 1474892405,
       2 => 'file',
     ),
     'c6ad91c6c212934ab253c432e6c4d0056a375cce' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '81042724757e8bf3701de33-25037161',
+  'nocache_hash' => '20814545557e91276d0dc65-33399164',
   'function' => 
   array (
   ),
@@ -289,6 +289,9 @@ $_smarty_tpl->decodeProperties(array (
 
             </div>
         </div>
+            <div class="col-md-3">
+                撒是谁的
+                </div>
             <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/jquery-2.1.4.min.js"></script>
             <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
@@ -304,7 +307,7 @@ $_smarty_tpl->decodeProperties(array (
                     height: "500px", //区域的高度
                     width: "700px", //区域的宽度
                     urlToGetDanmu: "",
-                    urlToPostDanmu: "/danmu/danmu/index"
+                    urlToPostDanmu: "/video/index/saveDanmu"
                 });
                 $("#danmup .danmu-div").danmu("addDanmu", [
                 ])

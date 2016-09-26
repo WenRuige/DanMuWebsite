@@ -24,4 +24,5 @@ class Base_Error{
     const MYSQL_EXECUTE_SUCCESS      = 00006;
     //系统级别错误
     const SYSTEM_LEVEL_ERROR         = 00007;
+
 }

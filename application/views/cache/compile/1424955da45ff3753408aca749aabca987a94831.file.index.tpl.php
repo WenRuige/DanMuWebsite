@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-22 23:33:20
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-26 19:54:55
          compiled from "/home/vagrant/Code/yaf_personal/application/views/index/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:28915645257e3f9c0cd7152-94512562%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:70464350357e90c8f4756a3-48322754%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1424955da45ff3753408aca749aabca987a94831' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/index/index.tpl',
-      1 => 1474558400,
+      1 => 1474887519,
       2 => 'file',
     ),
     'c6ad91c6c212934ab253c432e6c4d0056a375cce' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28915645257e3f9c0cd7152-94512562',
+  'nocache_hash' => '70464350357e90c8f4756a3-48322754',
   'function' => 
   array (
   ),
@@ -387,7 +387,6 @@ $_smarty_tpl->decodeProperties(array (
                                      alt="通用的占位符缩略图">
                                 <div class="caption">
                                     <p>一些示例文本。一些示例文本。</p>
-
                                 </div>
                             </div>
                         </div>
