@@ -10,7 +10,6 @@ class DanmuModel extends BaseModel {
     //获取弹幕的
     public function getDanmu(){
         $res = $this->db->from('danmu')->select(null)->select("*")->where('deleted_at',0)->fetchAll();
-       //$res =  $res->getQuery();
         return $res;
     }
 }

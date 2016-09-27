@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-26 20:20:06
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-27 09:34:05
          compiled from "/home/vagrant/Code/yaf_personal/application/views/video/video.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:20814545557e91276d0dc65-33399164%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:55776988957e9cc8d6ac6b3-02257346%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '24a379c7530e1a1c4ea0aa962379f502674d742b' => 
     array (
       0 => '/home/vagrant/Code/yaf_personal/application/views/video/video.tpl',
-      1 => 1474892405,
+      1 => 1474939278,
       2 => 'file',
     ),
     'c6ad91c6c212934ab253c432e6c4d0056a375cce' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20814545557e91276d0dc65-33399164',
+  'nocache_hash' => '55776988957e9cc8d6ac6b3-02257346',
   'function' => 
   array (
   ),
@@ -290,7 +290,7 @@ $_smarty_tpl->decodeProperties(array (
             </div>
         </div>
             <div class="col-md-3">
-                撒是谁的
+                右侧弹幕栏
                 </div>
             <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/jquery-2.1.4.min.js"></script>
@@ -306,11 +306,9 @@ $_smarty_tpl->decodeProperties(array (
 /video/ocean.mp4",
                     height: "500px", //区域的高度
                     width: "700px", //区域的宽度
-                    urlToGetDanmu: "",
+                    urlToGetDanmu: "/video/index/shootDanmu",
                     urlToPostDanmu: "/video/index/saveDanmu"
                 });
-                $("#danmup .danmu-div").danmu("addDanmu", [
-                ])
             </script>
     </section>
 

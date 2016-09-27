@@ -24,9 +24,10 @@ class IndexController extends Base_Controller_Page {
 
 
     }
+    //从数据库读取弹幕信息
     public function shootDanmuAction(){
         $danmuLogic = new Danmu_Logic_Danmu();
-        $res = $danmuLogic->getDanmu();
-        echo json_encode($res);
+        $danmuInfo = $danmuLogic->getDanmu();
+        echo $danmuInfo;
     }
 }

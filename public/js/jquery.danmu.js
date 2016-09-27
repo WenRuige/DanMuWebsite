@@ -302,7 +302,6 @@ var cyntax = {
             while (me.rows[result] !== 0) {
                 result = result + 1;
                 if (result >= me.rowCount) {
-
                     me.initRows(me);
                     result = 0;
                     break;

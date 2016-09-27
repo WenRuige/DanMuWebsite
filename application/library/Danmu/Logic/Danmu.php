@@ -35,15 +35,21 @@ class Danmu_Logic_Danmu{
         try{
            $DanmuModle = new DanmuModel();
             $info = $DanmuModle->getDanmu();
-            $data = array();
+            //拼凑弹幕
+            $json = '[';
             foreach($info as $key => $value){
-                $data[$key]= $info[$key]['content'];
+                $json .= $info[$key]['content'].',';
             }
-
-            return $data;
+            $json = substr($json,0,-1);
+            $json .= ']';
+            return $json;
         }catch(Exception $e){
             $e->getMessage();
-
+            $result   = array(
+                'CODE'      => Base_Error::MYSQL_EXECUTE_ERROR,
+                'MESSAGE'   => '执行错误'
+            );
+            return $result;
         }
     }
 
