@@ -16,7 +16,9 @@ class User_Logic_User{
         //密码md5加密
         $inputParam['email']    = $email;
         $inputParam['password'] = md5($password);
+        //是否登录
         $info = $userModel->getUserAccount($inputParam);
+        
         if(!empty($info)){
             Yaf_Session::getInstance()->set(User_Keys::getLoginUserKey(),$info['id']);
             User_Api::checkLogin();

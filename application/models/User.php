@@ -19,7 +19,7 @@ class UserModel extends BaseModel {
     }
     //查询用户账户
     public function getUserAccount($inputParam){
-        $res = $this->db->from('user')->select(null)->select("*")->where($inputParam)->select('deleted_at',0)->fetch();
+        $res = $this->db->from('user')->select(null)->select("*")->where($inputParam)->where('deleted_at',0)->fetch();
         return $res;
     }
     //检查email是否重复
