@@ -34,17 +34,19 @@
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
                             <input id="password" type="password" name="password" placeholder="密码" tabindex="2" class="form-control input-medium">
+                            <p id="sign"></p>
                         </div>
                     </div>
                 </div>
                 <div class="form-actions"><a href="/user/forget/index" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="/user/register/index" tabindex="6" class="btn btn-link text-muted">注册</a>
-                    <button type="button" tabindex="4" class="btn btn-primary">登录</button>
+                    <button type="button" tabindex="4" class="btn btn-primary" onclick="loginInfo.login()">登录</button>
                 </div>
             </form>
 
         </div>
     </div>
     <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="{$stroot}/logicJs/login/login.js"></script>
     <script>
         $(function() {
 
