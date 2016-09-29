@@ -23,6 +23,7 @@ class LoginController extends Base_Controller_Page {
         //实例化user逻辑层
         $userObj  = new User_logic_User();
         $flag = $userObj -> userLogin($email,$password);
+        echo json_encode($flag);
         if($flag){
             echo "123";
         }else{

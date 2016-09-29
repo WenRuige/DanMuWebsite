@@ -1,4 +1,0 @@
-SELECT *, deleted_at
-FROM user
-WHERE email = ?
-    AND password = ?

@@ -12,17 +12,47 @@
 class User_Logic_User{
     //用户登录界面
     public function userLogin($email,$password){
-        $userModel = new UserModel();
-        //密码md5加密
-        $inputParam['email']    = $email;
-        $inputParam['password'] = md5($password);
-        //是否登录
-        $info = $userModel->getUserAccount($inputParam);
-        
-        if(!empty($info)){
-            Yaf_Session::getInstance()->set(User_Keys::getLoginUserKey(),$info['id']);
+        try {
+            $userModel = new UserModel();
+            //密码md5加密
+            $inputParam['email'] = $email;
+            $inputParam['password'] = md5($password);
+            //是否登录
+            $info = $userModel->getUserAccount($inputParam);
+            //如果为空表示未登陆
+            if (empty($info)) {
+                $result = array(
+                    "CODE" => Base_Error::MYSQL_EXECUTE_ERROR,
+                    "MESSAGE" => "用户名或者密码不正确"
+                );
+                return $result;
+            }
+            //判断是否激活邮箱
+            if (intval($info['status']) === 0) {
+                $result = array(
+                    "CODE" => Base_Error::ACCOUNT_REGISTER_ERROR,
+                    "MESSAGE" => "账户尚未激活邮箱,请查看注册邮箱内是否有邮件"
+                );
+                return $result;
+            }
+            //存入session
+            Yaf_Session::getInstance()->set(User_Keys::getLoginUserKey(), $info['id']);
             User_Api::checkLogin();
-            return true;
+            $result = array(
+                "CODE"      => Base_Error::ACCOUNT_EXECUTE_SUCCESS,
+                "MESSAGE"   => "注册成功"
+            );
+            return $result;
+
+        }catch(Exception $e){
+            $log = new Base_Log();
+            $log->ERROR("执行失败!");
+            $result = array(
+                "CODE"    => Base_Error::MYSQL_EXECUTE_ERROR,
+                "MESSAGE" => "系统错误!"
+            );
+            return $result;
+
         }
         return false;
     }

@@ -26,4 +26,6 @@ class Base_Error{
     const SYSTEM_LEVEL_ERROR         = '00007';
     //参数错误
     const PARAM_LEVEL_ERROR          = '00008';
+    //注册成功
+    const ACCOUNT_EXECUTE_SUCCESS    = '00009';
 }

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-25 08:25:31
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-29 15:59:44
          compiled from "/private/var/www/yaf_personal/application/views/login/login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:176824661557e7197b721882-39645047%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:63442480157ecc9f06489b9-33128935%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '61cac415f5ad20b4f2974fcb06a7aaa00f120eea' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/login/login.tpl',
-      1 => 1474681102,
+      1 => 1475102784,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '176824661557e7197b721882-39645047',
+  'nocache_hash' => '63442480157ecc9f06489b9-33128935',
   'function' => 
   array (
   ),
@@ -54,11 +54,12 @@ $_smarty_tpl->decodeProperties(array (
                         <div class="controls">
                             <label for="password" class="control-label fa fa-asterisk"></label>
                             <input id="password" type="password" name="password" placeholder="密码" tabindex="2" class="form-control input-medium">
+                            <p id="sign"></p>
                         </div>
                     </div>
                 </div>
                 <div class="form-actions"><a href="/user/forget/index" tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a href="/user/register/index" tabindex="6" class="btn btn-link text-muted">注册</a>
-                    <button type="submit" tabindex="4" class="btn btn-primary">登录</button>
+                    <button type="button" tabindex="4" class="btn btn-primary" onclick="loginInfo.login()">登录</button>
                 </div>
             </form>
 
@@ -66,6 +67,8 @@ $_smarty_tpl->decodeProperties(array (
     </div>
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/logicJs/login/login.js"></script>
     <script>
         $(function() {
 
