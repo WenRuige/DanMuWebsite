@@ -8,8 +8,8 @@ class DanmuModel extends BaseModel {
         return $res;
     }
     //获取弹幕的
-    public function getDanmu(){
-        $res = $this->db->from('danmu')->select(null)->select("*")->where('deleted_at',0)->fetchAll();
+    public function getDanmu($videoId){
+        $res = $this->db->from('danmu')->select(null)->select("*")->where('video_id',$videoId)->where('deleted_at',0)->fetchAll();
         return $res;
     }
 }

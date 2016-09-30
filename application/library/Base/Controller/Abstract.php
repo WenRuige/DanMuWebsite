@@ -17,6 +17,7 @@ class Base_Controller_Abstract extends Yaf_Controller_Abstract{
         $this->webroot =  Base_Config::getConfig('web')->root;
         $this->objUser = User_Api::checkLogin();
         $this->userId  = !empty($this->objUser->userId)?$this->objUser->userId:0;
+       // echo $this->objUser->userId;
     }
     //未登录是否跳转
     protected function setNeedLogin($needLogin){

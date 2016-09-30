@@ -3,6 +3,8 @@
     <link rel="stylesheet" href="{$stroot}/css/main.css">
     <section class="content">
         <!---资源占位使用--->
+
+        <input type="hidden" id="video_id" value="{$id}">
         <div class="row">
             <div class="col-md-12">
                 </br>
@@ -30,8 +32,8 @@
                     src: "{$stroot}/video/ocean.mp4",
                     height: "500px", //区域的高度
                     width: "700px", //区域的宽度
-                    urlToGetDanmu: "/video/index/shootDanmu",
-                    urlToPostDanmu: "/video/index/saveDanmu"
+                    urlToGetDanmu: "/video/index/shootDanmu?id="+$("#video_id").val(),
+                    urlToPostDanmu: "/video/index/saveDanmu?id="+$("#video_id").val()
                 });
             </script>
     </section>

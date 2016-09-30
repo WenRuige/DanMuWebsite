@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-26 22:46:52
+<?php /* Smarty version Smarty-3.0.8, created on 2016-09-30 10:30:57
          compiled from "/private/var/www/yaf_personal/application/views/video/video.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:53521741457e934dc5ed918-87483946%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:158903283457edce615c8ab7-13850298%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ecb039602b93545fc348b436da083bf6e2318642' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/video/video.tpl',
-      1 => 1474899769,
+      1 => 1475202656,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '53521741457e934dc5ed918-87483946',
+  'nocache_hash' => '158903283457edce615c8ab7-13850298',
   'function' => 
   array (
   ),
@@ -274,6 +274,9 @@ $_smarty_tpl->decodeProperties(array (
 /css/main.css">
     <section class="content">
         <!---资源占位使用--->
+
+        <input type="hidden" id="video_id" value="<?php echo $_smarty_tpl->getVariable('id')->value;?>
+">
         <div class="row">
             <div class="col-md-12">
                 </br>
@@ -290,7 +293,7 @@ $_smarty_tpl->decodeProperties(array (
             </div>
         </div>
             <div class="col-md-3">
-                撒是谁的
+                右侧弹幕栏
                 </div>
             <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/jquery-2.1.4.min.js"></script>
@@ -306,11 +309,9 @@ $_smarty_tpl->decodeProperties(array (
 /video/ocean.mp4",
                     height: "500px", //区域的高度
                     width: "700px", //区域的宽度
-                    urlToGetDanmu: "",
-                    urlToPostDanmu: "/video/index/saveDanmu"
+                    urlToGetDanmu: "/video/index/shootDanmu?id="+$("#video_id").val(),
+                    urlToPostDanmu: "/video/index/saveDanmu?id="+$("#video_id").val()
                 });
-                $("#danmup .danmu-div").danmu("addDanmu", [
-                ])
             </script>
     </section>
 

@@ -5,15 +5,20 @@ class Danmu_Logic_Danmu{
 
 
     //插入一条弹幕
-    public function insertDanmu($danmu = ''){
-        if(empty($danmu)){
+    public function insertDanmu($danmu = '',$videoId = ''){
+        //用户id
+        $userId    = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
+        if(empty($danmu)||empty($videoId)||empty($userId)){
             return array("CODE" => Base_Error::MYSQL_EXECUTE_ERROR,"MESSAGE" => "参数错误!");
         }
         try{
             $DanmuModel = new DanmuModel();
-            $data['video_id'] = 1 ;
-            $data['content']  = $danmu;
+            $data['video_id']   = $videoId ;
+            $data['content']    = $danmu;
             $data['created_at'] = date("Y-m-d H:i:s");
+            $data['user_id']    = $userId;
+            //$log = "123.log";
+            //file_put_contents($)
             $info = $DanmuModel->insertDanmu($data);
             if(!empty($info)){
                 $result  = array(
@@ -31,10 +36,10 @@ class Danmu_Logic_Danmu{
             return $result;
         }
     }
-    public function getDanmu(){
+    public function getDanmu($videoId = ''){
         try{
            $DanmuModle = new DanmuModel();
-            $info = $DanmuModle->getDanmu();
+            $info = $DanmuModle->getDanmu($videoId);
             //拼凑弹幕
             $json = '[';
             foreach($info as $key => $value){

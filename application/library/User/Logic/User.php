@@ -40,7 +40,7 @@ class User_Logic_User{
             User_Api::checkLogin();
             $result = array(
                 "CODE"      => Base_Error::ACCOUNT_EXECUTE_SUCCESS,
-                "MESSAGE"   => "注册成功"
+                "MESSAGE"   => "登陆成功"
             );
             return $result;
 
@@ -54,7 +54,6 @@ class User_Logic_User{
             return $result;
 
         }
-        return false;
     }
     public function checkEmail($email = ''){
         try{
