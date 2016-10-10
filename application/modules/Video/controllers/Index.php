@@ -34,7 +34,7 @@ class IndexController extends Base_Controller_Page {
         if($info['CODE'] != Base_Error::MYSQL_EXECUTE_SUCCESS){
             //error
         }
-        //var_dump($info);
+        var_dump($info);
            
 
 
