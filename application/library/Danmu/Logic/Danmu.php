@@ -2,8 +2,6 @@
 //弹幕逻辑类
 class Danmu_Logic_Danmu{
 
-
-
     //插入一条弹幕
     public function insertDanmu($danmu = '',$videoId = ''){
         //用户id
@@ -17,6 +15,12 @@ class Danmu_Logic_Danmu{
             $data['content']    = $danmu;
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['user_id']    = $userId;
+            //json_encode数据
+            $list = json_encode($data);
+            //如果已经加载了redis,先加到redis在加到Mysql,如果不得话直接加载到Mysql
+            if(extension_loaded('redis')){
+
+            }
             //$log = "123.log";
             //file_put_contents($)
             $info = $DanmuModel->insertDanmu($data);
