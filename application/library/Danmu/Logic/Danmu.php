@@ -10,20 +10,22 @@ class Danmu_Logic_Danmu{
             return array("CODE" => Base_Error::MYSQL_EXECUTE_ERROR,"MESSAGE" => "参数错误!");
         }
         try{
-            $DanmuModel = new DanmuModel();
+
             $data['video_id']   = $videoId ;
             $data['content']    = $danmu;
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['user_id']    = $userId;
             //json_encode数据
             $list = json_encode($data);
+//            $file = 'log.txt';
+//            file_put_contents($file,$list,FILE_APPEND);
             //如果已经加载了redis,先加到redis在加到Mysql,如果不得话直接加载到Mysql
             if(extension_loaded('redis')){
+                $cache =  new Danmu_Cache_Cache();
+                $cache->insertDanmuToRedis($list);
 
             }
-            //$log = "123.log";
-            //file_put_contents($)
-            $info = $DanmuModel->insertDanmu($data);
+
             if(!empty($info)){
                 $result  = array(
                     "CODE"      => Base_Error::MYSQL_EXECUTE_SUCCESS,
