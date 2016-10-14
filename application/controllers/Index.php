@@ -7,13 +7,15 @@ class IndexController extends Base_Controller_Page {
         parent::init();
     }
     public function indexAction(){
+        $iipp=$_SERVER["REMOTE_ADDR"];
+        echo $iipp;
      //  $a = new UserModel();
        //echo Base_Config::getConfig('web')->stroot;
         //echo "hello world";
-        $data = new Danmu_Cache_Cache();
-
-        $obj = $data->test();
-        var_dump($obj);
-        //$this->getView()->display('index/index.tpl');
+//        $data = new Danmu_Cache_Cache();
+//
+//        $obj = $data->test();
+//        var_dump($obj);
+        $this->getView()->display('index/index.tpl');
     }
 }

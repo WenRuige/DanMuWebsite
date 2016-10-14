@@ -79,7 +79,9 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#activity" data-toggle="tab">动态</a></li>
                     <li><a href="#timeline" data-toggle="tab">时间轴</a></li>
-                    <li><a href="#settings" data-toggle="tab">设置</a></li>
+                    <li><a href="#settings" data-toggle="tab">个人设置</a></li>
+                    <li><a href="#video_upload" data-toggle="tab">视频上传</a></li>
+                    <li><a href="#settings" data-toggle="tab">上传的视频</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="active tab-pane" id="activity">
@@ -306,18 +308,19 @@
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="职位">
+                                    <input type="text" class="form-control" id="position" placeholder="职位">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">位置</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName" placeholder="位置">
+                                    {*<input type="text" class="form-control" id="inputName" placeholder="位置">*}
+                                    通过ip来获取位置,二期实现
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label" >技能</label>
+                                <label class="col-sm-2 control-label" >爱好</label>
                                 <div class="col-sm-10">
                                 <select class="form-control select2" multiple="multiple" data-placeholder="选择一个或者多个"style="width: 100%">
                                     <option>PHP</option>
@@ -329,6 +332,67 @@
                                     <option>我啥也不会</option>
                                 </select>
                                     </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSkills" class="col-sm-2 control-label">自我介绍</label>
+                                <div class="col-sm-10">
+                                <textarea class="form-control" id = "introduce" rows="3" placeholder="Enter ..."></textarea>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" class="btn btn-danger" onclick="personInfo.updatePersonInformation()">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane" id="video_upload">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">视频名称</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="nickname" placeholder="姓名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-sm-2 control-label">l</label>
+
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="职位">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">位置</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputName" placeholder="位置">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" >爱好</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control select2" multiple="multiple" data-placeholder="选择一个或者多个"style="width: 100%">
+                                        <option>PHP</option>
+                                        <option>JAVASCRIPT</option>
+                                        <option>PYTHON</option>
+                                        <option>C++</option>
+                                        <option>C</option>
+                                        <option>C#</option>
+                                        <option>我啥也不会</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
@@ -367,6 +431,7 @@
 
 
     <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="{$stroot}/logicJs/center/person.js"></script>
     <script src="../../plugins/select2/select2.full.min.js"></script>
     <script>
         $(".select2").select2();

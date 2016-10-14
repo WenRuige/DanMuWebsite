@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-02 08:09:09
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 07:51:21
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:64251045357f05025650808-71996377%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:46812601158001df9a9e3a8-17286468%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1475366947,
+      1 => 1476402679,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '64251045357f05025650808-71996377',
+  'nocache_hash' => '46812601158001df9a9e3a8-17286468',
   'function' => 
   array (
   ),
@@ -349,7 +349,9 @@ $_smarty_tpl->decodeProperties(array (
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#activity" data-toggle="tab">动态</a></li>
                     <li><a href="#timeline" data-toggle="tab">时间轴</a></li>
-                    <li><a href="#settings" data-toggle="tab">设置</a></li>
+                    <li><a href="#settings" data-toggle="tab">个人设置</a></li>
+                    <li><a href="#video_upload" data-toggle="tab">视频上传</a></li>
+                    <li><a href="#settings" data-toggle="tab">上传的视频</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="active tab-pane" id="activity">
@@ -576,18 +578,18 @@ $_smarty_tpl->decodeProperties(array (
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="职位">
+                                    <input type="text" class="form-control" id="position" placeholder="职位">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">位置</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName" placeholder="位置">
+                                    通过ip来获取位置,二期实现
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label" >技能</label>
+                                <label class="col-sm-2 control-label" >爱好</label>
                                 <div class="col-sm-10">
                                 <select class="form-control select2" multiple="multiple" data-placeholder="选择一个或者多个"style="width: 100%">
                                     <option>PHP</option>
@@ -599,6 +601,67 @@ $_smarty_tpl->decodeProperties(array (
                                     <option>我啥也不会</option>
                                 </select>
                                     </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSkills" class="col-sm-2 control-label">自我介绍</label>
+                                <div class="col-sm-10">
+                                <textarea class="form-control" id = "introduce" rows="3" placeholder="Enter ..."></textarea>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" class="btn btn-danger" onclick="personInfo.updatePersonInformation()">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane" id="video_upload">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">视频名称</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="nickname" placeholder="姓名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-sm-2 control-label">l</label>
+
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="职位">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">位置</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputName" placeholder="位置">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" >爱好</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control select2" multiple="multiple" data-placeholder="选择一个或者多个"style="width: 100%">
+                                        <option>PHP</option>
+                                        <option>JAVASCRIPT</option>
+                                        <option>PYTHON</option>
+                                        <option>C++</option>
+                                        <option>C</option>
+                                        <option>C#</option>
+                                        <option>我啥也不会</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
@@ -638,6 +701,8 @@ $_smarty_tpl->decodeProperties(array (
 
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/logicJs/center/person.js"></script>
     <script src="../../plugins/select2/select2.full.min.js"></script>
     <script>
         $(".select2").select2();
