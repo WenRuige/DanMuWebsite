@@ -13,7 +13,13 @@ class IndexController extends Base_Controller_Page{
 
     public function  indexAction(){
         $userId = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
-        //dump($userId);
+        //获取用户的个人信息
+        $centerLogic = new Center_Logic_Person();
+        $userInfo = $centerLogic->getPersonInformation($userId);
+        dump($userInfo['RES']);
+        if($userInfo['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
+            $this->getView()->assign('userInfo',$userInfo['RES']);
+        }
         $this->getView()->display('center/center.tpl');
     }
 
@@ -29,7 +35,11 @@ class IndexController extends Base_Controller_Page{
         //爱好
         $inputParam['hobby']          =   Base_Request::getRequest('hobby',null);
         $inputParam = array_filter($inputParam);
+        $user_id = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
         //判断爱好是否为空
-        echo json_encode($inputParam);
+        //echo json_encode($inputParam);
+        $centerLogic = new Center_Logic_Person();
+        $info = $centerLogic->updatePersonInformation($user_id,$inputParam);
+        echo json_encode($info);
     }
 }

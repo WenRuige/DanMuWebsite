@@ -28,4 +28,6 @@ class Base_Error{
     const PARAM_LEVEL_ERROR          = '00008';
     //执行成功
     const ACCOUNT_EXECUTE_SUCCESS    = '00009';
+    //不能为空
+    const CAN_NOT_BE_BLANK           = '00010';
 }

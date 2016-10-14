@@ -301,14 +301,14 @@
                                 <label for="inputName" class="col-sm-2 control-label">姓名</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nickname" placeholder="姓名">
+                                    <input type="text" class="form-control" id="nickname" value="{$userInfo['nickname']}" placeholder="姓名">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="position" placeholder="职位">
+                                    <input type="text" class="form-control" id="position"  value="{$userInfo['position']}" placeholder="职位">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -336,7 +336,7 @@
                             <div class="form-group">
                                 <label for="inputSkills" class="col-sm-2 control-label">自我介绍</label>
                                 <div class="col-sm-10">
-                                <textarea class="form-control" id = "introduce" rows="3" placeholder="Enter ..."></textarea>
+                                <textarea class="form-control" id = "introduce" rows="3" placeholder="Enter ...">{$userInfo['introduce']}</textarea>
                                     </div>
                             </div>
                             <div class="form-group">

@@ -30,4 +30,10 @@ class LoginController extends Base_Controller_Page {
             echo "登录错误";
         }
     }
+    //注销登录
+    public function logoutAction(){
+        $session=Yaf_Session::getInstance();
+        //注销登录
+        $session->del(User_Keys::getLoginUserKey());
+    }
 }

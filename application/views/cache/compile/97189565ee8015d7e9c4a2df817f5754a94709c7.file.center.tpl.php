@@ -1,23 +1,23 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 07:51:21
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 09:06:17
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:46812601158001df9a9e3a8-17286468%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:208036767658002f8986ede0-88909747%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1476402679,
+      1 => 1476407176,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/layouts/index.tpl',
-      1 => 1474417348,
+      1 => 1476405331,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '46812601158001df9a9e3a8-17286468',
+  'nocache_hash' => '208036767658002f8986ede0-88909747',
   'function' => 
   array (
   ),
@@ -104,38 +104,17 @@ $_smarty_tpl->decodeProperties(array (
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
+                        <li>
                             <!-- Menu toggle button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="label label-success">4</span>
+                            <a href="/center/index/index">
+                                <i class="fa fa-envelope-o"></i>个人中心
+                                <span class="label label-success">new</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
-                                <li>
-                                    <!-- inner menu: contains the messages -->
-                                    <ul class="menu">
-                                        <li><!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <!-- User Image -->
-                                                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                                </div>
-                                                <!-- Message title and timestamp -->
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <!-- The message -->
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <!-- end message -->
-                                    </ul>
-                                    <!-- /.menu -->
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
+                        </li>
+                        <li>
+                        <a href="/user/login/logout" <i="" class="glyphicon glyphicon-off">
+                        <!--<span class="label label-danger">9</span>-->
+                        </a>
                         </li>
                         <!-- /.messages-menu -->
 
@@ -571,14 +550,16 @@ $_smarty_tpl->decodeProperties(array (
                                 <label for="inputName" class="col-sm-2 control-label">姓名</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nickname" placeholder="姓名">
+                                    <input type="text" class="form-control" id="nickname" value="<?php echo $_smarty_tpl->getVariable('userInfo')->value['nickname'];?>
+" placeholder="姓名">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="position" placeholder="职位">
+                                    <input type="text" class="form-control" id="position"  value="<?php echo $_smarty_tpl->getVariable('userInfo')->value['position'];?>
+" placeholder="职位">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -605,7 +586,8 @@ $_smarty_tpl->decodeProperties(array (
                             <div class="form-group">
                                 <label for="inputSkills" class="col-sm-2 control-label">自我介绍</label>
                                 <div class="col-sm-10">
-                                <textarea class="form-control" id = "introduce" rows="3" placeholder="Enter ..."></textarea>
+                                <textarea class="form-control" id = "introduce" rows="3" placeholder="Enter ..."><?php echo $_smarty_tpl->getVariable('userInfo')->value['introduce'];?>
+</textarea>
                                     </div>
                             </div>
                             <div class="form-group">

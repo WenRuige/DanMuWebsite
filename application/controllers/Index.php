@@ -7,8 +7,8 @@ class IndexController extends Base_Controller_Page {
         parent::init();
     }
     public function indexAction(){
-        $iipp=$_SERVER["REMOTE_ADDR"];
-        echo $iipp;
+        //$iipp=$_SERVER["REMOTE_ADDR"];
+       // echo $iipp;
      //  $a = new UserModel();
        //echo Base_Config::getConfig('web')->stroot;
         //echo "hello world";
