@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-30 10:30:57
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 20:03:16
          compiled from "/private/var/www/yaf_personal/application/views/video/video.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:158903283457edce615c8ab7-13850298%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_smarty_tpl->decodeProperties(array (
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/layouts/index.tpl',
-      1 => 1474417348,
+      1 => 1476446487,
       2 => 'file',
     ),
   ),
@@ -60,6 +60,7 @@ $_smarty_tpl->decodeProperties(array (
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-black layout-top-nav">
@@ -104,38 +105,17 @@ $_smarty_tpl->decodeProperties(array (
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
+                        <li>
                             <!-- Menu toggle button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="label label-success">4</span>
+                            <a href="/center/index/index">
+                                <i class="fa fa-envelope-o"></i>个人中心
+                                <span class="label label-success">new</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
-                                <li>
-                                    <!-- inner menu: contains the messages -->
-                                    <ul class="menu">
-                                        <li><!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <!-- User Image -->
-                                                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                                </div>
-                                                <!-- Message title and timestamp -->
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <!-- The message -->
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <!-- end message -->
-                                    </ul>
-                                    <!-- /.menu -->
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
+                        </li>
+                        <li>
+                        <a href="/user/login/logout" <i="" class="glyphicon glyphicon-off">
+                        <!--<span class="label label-danger">9</span>-->
+                        </a>
                         </li>
                         <!-- /.messages-menu -->
 
@@ -337,8 +317,7 @@ $_smarty_tpl->decodeProperties(array (
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
-/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/top.js"></script>
 <!-- Bootstrap 3.3.6 -->

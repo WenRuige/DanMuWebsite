@@ -27,6 +27,7 @@
     <script src="{$stroot}/js/html5shiv.min.js"></script>
     <script src="{$stroot}/js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-black layout-top-nav">
@@ -264,7 +265,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 <script src="{$stroot}/js/top.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{$stroot}/bootstrap/js/bootstrap.min.js"></script>

@@ -45,14 +45,21 @@ class Danmu_Logic_Danmu{
     public function getDanmu($videoId = ''){
         try{
            $DanmuModle = new DanmuModel();
-            $info = $DanmuModle->getDanmu($videoId);
-            //拼凑弹幕
-            $json = '[';
-            foreach($info as $key => $value){
-                $json .= $info[$key]['content'].',';
+            //如果加载了redis
+            if(extension_loaded('redis')){
+                $cache =  new Danmu_Cache_Cache();
+                $json = $cache->getDanmuFromRedis($videoId);
+
+            }else{
+                $info = $DanmuModle->getDanmu($videoId);
+                //拼凑弹幕
+                $json = '[';
+                foreach($info as $key => $value){
+                    $json .= $info[$key]['content'].',';
+                }
+                $json = substr($json,0,-1);
+                $json .= ']';
             }
-            $json = substr($json,0,-1);
-            $json .= ']';
             return $json;
         }catch(Exception $e){
             $e->getMessage();

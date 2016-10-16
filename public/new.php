@@ -30,16 +30,13 @@ $redis->connect('127.0.0.1', 6379);
 //}
 
 //返回链表中的所有元素
-$list = $redis->lRange('danmu_list',0,-1);
+//$list = $redis->lRange('danmu_list',0,-1);
 //$list =  $redis->lGet('danmu_list',0);
 //进行decode
 //如果json_decode第二个参数为true的时候,将json数据转换为数组,
 //如果不设置参数的话将其转换成对象
 //$array = json_decode($list,true);
+//$redis->set('name','gwenrui',1);
+$name = $redis->get('name');
+var_dump($name);
 
-
-
-
-
-var_dump($list);
-var_dump($array);

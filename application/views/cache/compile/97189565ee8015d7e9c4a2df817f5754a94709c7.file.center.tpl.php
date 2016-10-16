@@ -1,23 +1,23 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 09:06:17
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 20:02:19
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:208036767658002f8986ede0-88909747%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:14081337585800c94b2a0351-54712732%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1476407176,
+      1 => 1476446538,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/layouts/index.tpl',
-      1 => 1476405331,
+      1 => 1476446487,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '208036767658002f8986ede0-88909747',
+  'nocache_hash' => '14081337585800c94b2a0351-54712732',
   'function' => 
   array (
   ),
@@ -60,6 +60,7 @@ $_smarty_tpl->decodeProperties(array (
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-black layout-top-nav">
@@ -250,18 +251,22 @@ $_smarty_tpl->decodeProperties(array (
             <!-- Main content -->
             
 <section class="content">
-    <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/uploadify/uploadify.css">
     <div class="row">
         <div class="col-md-3">
-
             <!-- Profile Image -->
             <div class="box box-primary">
                 <div class="box-body box-profile">
                     <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
 
-                    <h3 class="profile-username text-center">Nina Mcintire</h3>
+                    <h3 class="profile-username text-center"><?php echo $_smarty_tpl->getVariable('userInfo')->value['nickname'];?>
+</h3>
 
-                    <p class="text-muted text-center">Software Engineer</p>
+                    <p class="text-muted text-center"><?php echo $_smarty_tpl->getVariable('userInfo')->value['position'];?>
+</p>
 
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
@@ -274,8 +279,6 @@ $_smarty_tpl->decodeProperties(array (
                             <b>Friends</b> <a class="pull-right">13,287</a>
                         </li>
                     </ul>
-
-                    <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -284,39 +287,43 @@ $_smarty_tpl->decodeProperties(array (
             <!-- About Me Box -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">About Me</h3>
+                    <h3 class="box-title">关于我</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+                    <strong><i class="fa fa-book margin-r-5"></i> 教育程度</strong>
 
                     <p class="text-muted">
-                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                        山东蓝翔高级挖掘机技工学徒
                     </p>
 
                     <hr>
 
-                    <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                    <strong><i class="fa fa-map-marker margin-r-5"></i>位置</strong>
 
-                    <p class="text-muted">Malibu, California</p>
+                    <p class="text-muted">圣地亚哥</p>
 
                     <hr>
 
-                    <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+                    <strong><i class="fa fa-pencil margin-r-5"></i>爱好</strong>
 
                     <p>
-                        <span class="label label-danger">UI Design</span>
-                        <span class="label label-success">Coding</span>
-                        <span class="label label-info">Javascript</span>
-                        <span class="label label-warning">PHP</span>
-                        <span class="label label-primary">Node.js</span>
+                        <?php  $_smarty_tpl->tpl_vars['list'] = new Smarty_Variable;
+ $_from = explode(",",$_smarty_tpl->getVariable('userInfo')->value['hobby']); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['list']->key => $_smarty_tpl->tpl_vars['list']->value){
+?>
+                        <span class="label label-info"><?php echo $_smarty_tpl->tpl_vars['list']->value;?>
+</span>
+                            <?php }} ?>
                     </p>
 
                     <hr>
 
-                    <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+                    <strong><i class="fa fa-file-text-o margin-r-5"></i> 自我介绍</strong>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    <p><?php echo $_smarty_tpl->getVariable('userInfo')->value['introduce'];?>
+</p>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -545,13 +552,31 @@ $_smarty_tpl->decodeProperties(array (
                     <!-- /.tab-pane -->
 
                     <div class="tab-pane" id="settings">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">姓名</label>
 
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="nickname" value="<?php echo $_smarty_tpl->getVariable('userInfo')->value['nickname'];?>
 " placeholder="姓名">
+                                </div>
+                            </div>
+
+
+                            <form>
+                                <div id="queue"></div>
+                                <input id="file_upload" name="file_upload" type="file" multiple="true">
+                            </form>
+
+
+
+
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">头像</label>
+
+                                <div class="col-sm-10">
+                                    <div id="queue"></div>
+                                    <input id="file_upload" name="file_upload" type="file" multiple="true">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -572,15 +597,8 @@ $_smarty_tpl->decodeProperties(array (
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" >爱好</label>
                                 <div class="col-sm-10">
-                                <select class="form-control select2" multiple="multiple" data-placeholder="选择一个或者多个"style="width: 100%">
-                                    <option>PHP</option>
-                                    <option>JAVASCRIPT</option>
-                                    <option>PYTHON</option>
-                                    <option>C++</option>
-                                    <option>C</option>
-                                    <option>C#</option>
-                                    <option>我啥也不会</option>
-                                </select>
+                                    <input type="text" class="form-control" id="hobby" placeholder="爱好,多个请用','分隔" value="<?php echo $_smarty_tpl->getVariable('userInfo')->value['hobby'];?>
+">
                                     </div>
                             </div>
                             <div class="form-group">
@@ -679,13 +697,24 @@ $_smarty_tpl->decodeProperties(array (
     <!-- /.row -->
 
 </section>
-
-
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/uploadify/jquery.uploadify.js"></script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /logicJs/center/person.js"></script>
     <script src="../../plugins/select2/select2.full.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#file_upload").uploadify({
+
+            });
+//            $('#file_upload').uploadify({
+//                'swf'      : 'uploadify.swf',
+//                'uploader' : 'uploadify.php'
+//            });
+        });
+    </script>
     <script>
         $(".select2").select2();
     </script>
@@ -711,8 +740,7 @@ $_smarty_tpl->decodeProperties(array (
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
-/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/top.js"></script>
 <!-- Bootstrap 3.3.6 -->
