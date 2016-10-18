@@ -15,8 +15,8 @@
 //echo $passwordHash;
 
 //连接本地的 Redis 服务
-$redis = new Redis();
-$redis->connect('127.0.0.1', 6379);
+//$redis = new Redis();
+//$redis->connect('127.0.0.1', 6379);
 
 //$data = "{'video_id':'1','content':"{ \"text\":\"\u63d2\u5165\u6570\u636e\",\"color\":\"#ffffff\",\"size\":\"10\",\"position\":\"0\",\"time\":89}","created_at":"2016-10-13 08:25:09","user_id":"23"}"
 //$redis->lPush('list','redis');
@@ -37,6 +37,10 @@ $redis->connect('127.0.0.1', 6379);
 //如果不设置参数的话将其转换成对象
 //$array = json_decode($list,true);
 //$redis->set('name','gwenrui',1);
-$name = $redis->get('name');
-var_dump($name);
+//$name = $redis->get('name');
+//var_dump($name);
 
+function ter($id){
+    shell_exec($id);
+    echo "123";
+}

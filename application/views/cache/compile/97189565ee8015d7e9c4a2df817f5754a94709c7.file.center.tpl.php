@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 20:02:19
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-18 22:23:31
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:14081337585800c94b2a0351-54712732%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1957968067580630639ac550-25827205%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1476446538,
+      1 => 1476800610,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14081337585800c94b2a0351-54712732',
+  'nocache_hash' => '1957968067580630639ac550-25827205',
   'function' => 
   array (
   ),
@@ -571,14 +571,14 @@ if ($_smarty_tpl->_count($_from) > 0){
 
 
 
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">头像</label>
 
                                 <div class="col-sm-10">
                                     <div id="queue"></div>
                                     <input id="file_upload" name="file_upload" type="file" multiple="true">
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
@@ -706,13 +706,11 @@ if ($_smarty_tpl->_count($_from) > 0){
     <script src="../../plugins/select2/select2.full.min.js"></script>
     <script type="text/javascript">
         $(function() {
-            $("#file_upload").uploadify({
-
+            $('#file_upload').uploadify({
+                'swf'      : "<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/uploadify/uploadify.swf",
+                'uploader' : 'uploadify.php'
             });
-//            $('#file_upload').uploadify({
-//                'swf'      : 'uploadify.swf',
-//                'uploader' : 'uploadify.php'
-//            });
         });
     </script>
     <script>

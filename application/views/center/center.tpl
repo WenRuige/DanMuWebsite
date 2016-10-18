@@ -318,14 +318,14 @@
 
 
 
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">头像</label>
 
                                 <div class="col-sm-10">
                                     <div id="queue"></div>
                                     <input id="file_upload" name="file_upload" type="file" multiple="true">
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
@@ -457,11 +457,8 @@
     <script src="../../plugins/select2/select2.full.min.js"></script>
     <script type="text/javascript">
         $(function() {
-//            $("#file_upload").uploadify({
-//
-//            });
             $('#file_upload').uploadify({
-                'swf'      : 'uploadify.swf',
+                'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
                 'uploader' : 'uploadify.php'
             });
         });
