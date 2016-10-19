@@ -458,8 +458,13 @@
     <script type="text/javascript">
         $(function() {
             $('#file_upload').uploadify({
+                'buttonText' : '点击上传',
                 'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
-                'uploader' : 'uploadify.php'
+                'uploader' : '{$stroot}/plugins/uploadify/uploadify.php',
+                'onUploadSuccess' : function(file, data, response){
+                  alert(data);
+                    //$("#file_upload").append(imgObj);
+                }
             });
         });
     </script>

@@ -1,6 +1,7 @@
 <?php
 //应用路径
 define("APP_PATH",  realpath(dirname(__FILE__) . '/../'));
+echo APP_PATH;echo
 //配置路径
 define("APP_CONFIG", APP_PATH.'/conf');
 //当前使用的节点(test/dev/production)
