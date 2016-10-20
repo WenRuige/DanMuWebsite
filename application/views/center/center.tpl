@@ -309,11 +309,15 @@
                                 </div>
                             </div>
 
-
-                            <form>
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-sm-2 control-label">头像</label>
+                                <div class="col-sm-10">
                                 <div id="queue"></div>
                                 <input id="file_upload" name="file_upload" type="file" multiple="true">
-                            </form>
+                                    照片名称:<span id="url"></span>
+                                    </div>
+
+                                </div>
 
 
 
@@ -462,8 +466,7 @@
                 'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
                 'uploader' : '{$stroot}/plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
-                  alert(data);
-                    //$("#file_upload").append(imgObj);
+                    $("#url").text(data);
                 }
             });
         });

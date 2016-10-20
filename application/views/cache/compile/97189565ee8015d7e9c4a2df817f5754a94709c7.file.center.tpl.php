@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-19 09:30:25
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-20 08:44:13
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:13974888265806ccb0f3ebc2-84812987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:11960528295808135d279c70-06097038%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1476840619,
+      1 => 1476924136,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13974888265806ccb0f3ebc2-84812987',
+  'nocache_hash' => '11960528295808135d279c70-06097038',
   'function' => 
   array (
   ),
@@ -562,11 +562,15 @@ if ($_smarty_tpl->_count($_from) > 0){
                                 </div>
                             </div>
 
-
-                            <form>
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-sm-2 control-label">头像</label>
+                                <div class="col-sm-10">
                                 <div id="queue"></div>
                                 <input id="file_upload" name="file_upload" type="file" multiple="true">
-                            </form>
+                                    照片名称:<span id="url"></span>
+                                    </div>
+
+                                </div>
 
 
 
@@ -713,8 +717,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                 'uploader' : '<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
-                  alert(data);
-                    //$("#file_upload").append(imgObj);
+                    $("#url").text(data);
                 }
             });
         });
