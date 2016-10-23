@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-14 20:03:16
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-22 14:40:51
          compiled from "/private/var/www/yaf_personal/application/views/video/video.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:158903283457edce615c8ab7-13850298%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_smarty_tpl->decodeProperties(array (
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/layouts/index.tpl',
-      1 => 1476446487,
+      1 => 1477118433,
       2 => 'file',
     ),
   ),
@@ -317,7 +317,8 @@ $_smarty_tpl->decodeProperties(array (
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-
+<script src ="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/top.js"></script>
 <!-- Bootstrap 3.3.6 -->

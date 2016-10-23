@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{$stroot}/dist/css/skins/_all-skins.min.css">
     <!--加载回到顶部-->
     <link rel="stylesheet" href="{$stroot}/css/top.css">
+    <script src ="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

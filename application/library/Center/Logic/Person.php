@@ -19,6 +19,13 @@ class Center_Logic_Person {
                 return $result;
             }
             $userObj = new UserModel();
+            //如果照片路由不为空的话,更新的时候需要把原来的照片删掉节省空间
+            if(!empty($param['photo_url'])){
+                $photo_url = $userObj->getUserInformation(['photo_url'],["id" =>$user_id]);
+                $filepath = APP_UPLOADS.'/'.$user_id.'/'.$photo_url;
+                @unlink($filepath);
+            }
+
             $updateStatus = $userObj->updatePersonInformation($user_id,$param);
             if($updateStatus){
                 $result  = array(
@@ -41,7 +48,7 @@ class Center_Logic_Person {
         try{
             //昵称,爱好,位置,自我介绍
             $userObj = new UserModel();
-            $info = $userObj->getUserInformation(['nickname','hobby','position','introduce'],['id' => $userId]);
+            $info = $userObj->getUserInformation(['nickname','hobby','position','introduce','photo_url,id'],['id' => $userId]);
             if($info){
                 $result = array(
                     "CODE"      => Base_Error::MYSQL_EXECUTE_SUCCESS,

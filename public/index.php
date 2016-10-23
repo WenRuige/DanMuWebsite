@@ -9,6 +9,8 @@ define('APP_ENVIRON', ini_get('yaf.environ'));
 define("APP_LIBRARY", APP_PATH.'/application/library');
 //插件信息
 define("APP_PLUGINS", APP_PATH.'/application/plugins');
+//存放信息位置(存储用户上传的文件)
+define("APP_UPLOADS",APP_PATH.'/public/uploads');
 //设置时区
 ini_set('date.timezone', 'Asia/Shanghai');
 

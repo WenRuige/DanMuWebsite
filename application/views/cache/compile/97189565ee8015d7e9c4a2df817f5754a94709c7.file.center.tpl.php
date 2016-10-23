@@ -1,23 +1,23 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-20 08:44:13
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-23 11:17:37
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11960528295808135d279c70-06097038%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:132670525580c2bd10e5d51-27740371%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1476924136,
+      1 => 1477192655,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/layouts/index.tpl',
-      1 => 1476446487,
+      1 => 1477120012,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11960528295808135d279c70-06097038',
+  'nocache_hash' => '132670525580c2bd10e5d51-27740371',
   'function' => 
   array (
   ),
@@ -50,6 +50,9 @@ $_smarty_tpl->decodeProperties(array (
     <!--加载回到顶部-->
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /css/top.css">
+    <script src ="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -260,7 +263,10 @@ $_smarty_tpl->decodeProperties(array (
             <!-- Profile Image -->
             <div class="box box-primary">
                 <div class="box-body box-profile">
-                    <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+                    <img class="profile-user-img img-responsive img-circle" <?php if ($_smarty_tpl->getVariable('userInfo')->value['photo_url']){?>src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/uploads/<?php echo $_smarty_tpl->getVariable('userInfo')->value['id'];?>
+/<?php echo $_smarty_tpl->getVariable('userInfo')->value['photo_url'];?>
+"<?php }else{ ?>src="../../dist/img/user4-128x128.jpg"<?php }?> alt="User profile picture">
 
                     <h3 class="profile-username text-center"><?php echo $_smarty_tpl->getVariable('userInfo')->value['nickname'];?>
 </h3>
@@ -701,16 +707,15 @@ if ($_smarty_tpl->_count($_from) > 0){
     <!-- /.row -->
 
 </section>
+
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/jQuery/jquery-2.2.3.min.js"></script>
+
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/jquery.uploadify.js"></script>
-    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
-/logicJs/center/person.js"></script>
-    <script src="../../plugins/select2/select2.full.min.js"></script>
     <script type="text/javascript">
-        $(function() {
-            $('#file_upload').uploadify({
+        $(document).ready(function () {
+            jQuery('#file_upload').uploadify({
                 'buttonText' : '点击上传',
                 'swf'      : "<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/uploadify.swf",
@@ -722,6 +727,10 @@ if ($_smarty_tpl->_count($_from) > 0){
             });
         });
     </script>
+    <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/logicJs/center/person.js"></script>
+    <script src="../../plugins/select2/select2.full.min.js"></script>
+
     <script>
         $(".select2").select2();
     </script>

@@ -10,7 +10,7 @@
             <!-- Profile Image -->
             <div class="box box-primary">
                 <div class="box-body box-profile">
-                    <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+                    <img class="profile-user-img img-responsive img-circle" {if $userInfo['photo_url'] }src="{$stroot}/uploads/{$userInfo['id']}/{$userInfo['photo_url']}"{else}src="../../dist/img/user4-128x128.jpg"{/if} alt="User profile picture">
 
                     <h3 class="profile-username text-center">{$userInfo['nickname']}</h3>
 
@@ -455,13 +455,13 @@
     <!-- /.row -->
 
 </section>
+
     <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
     <script src="{$stroot}/plugins/uploadify/jquery.uploadify.js"></script>
-    <script src="{$stroot}/logicJs/center/person.js"></script>
-    <script src="../../plugins/select2/select2.full.min.js"></script>
     <script type="text/javascript">
-        $(function() {
-            $('#file_upload').uploadify({
+        $(document).ready(function () {
+            jQuery('#file_upload').uploadify({
                 'buttonText' : '点击上传',
                 'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
                 'uploader' : '{$stroot}/plugins/uploadify/uploadify.php',
@@ -471,6 +471,9 @@
             });
         });
     </script>
+    <script src="{$stroot}/logicJs/center/person.js"></script>
+    <script src="../../plugins/select2/select2.full.min.js"></script>
+
     <script>
         $(".select2").select2();
     </script>

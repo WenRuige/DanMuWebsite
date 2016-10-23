@@ -18,6 +18,7 @@ var personInfo = {
         data['hobby']       =   $("#hobby").val();
         //自我介绍
         data['introduce']   =   $("#introduce").val();
+        data['photo_url']   =   $("#url").text();
         console.log(data);
         $.post("/center/index/updatePersonInformation",data,function(data){
             console.log(data);

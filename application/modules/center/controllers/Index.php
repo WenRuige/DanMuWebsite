@@ -12,6 +12,7 @@ class IndexController extends Base_Controller_Page{
     }
 
     public function  indexAction(){
+        echo APP_PATH;
         $userId = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
         //获取用户的个人信息
         $centerLogic = new Center_Logic_Person();
@@ -34,6 +35,7 @@ class IndexController extends Base_Controller_Page{
         $inputParam['introduce']      =   filter_input(INPUT_POST, 'introduce', FILTER_DEFAULT);
         //爱好
         $inputParam['hobby']          =   Base_Request::getRequest('hobby',null);
+        $inputParam['photo_url']      =   Base_Request::getRequest('photo_url',null);
         $inputParam = array_filter($inputParam);
         $user_id = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
         //判断爱好是否为空
