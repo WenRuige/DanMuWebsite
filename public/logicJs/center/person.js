@@ -30,7 +30,28 @@ var personInfo = {
           // var a = $(".select2-selection__choice").attr('title');
        // alert(a);
        // alert(hobbit);
+    }
+}
 
-
+var videoInfo = {
+    //增加视频信息
+    insertVideoInformation:function(){
+        var data = {};
+        //视频名称
+        data['name']          = $("#video_name");
+        //栏目id
+        data['columns_id']    = $("#video_columns option:selected").val();
+        //视频
+        data['video']         = $("#video_url").val();
+        //标签
+        data['tag']           = $("#tag").val();
+        //视频介绍
+        data['introduce']     = $("#introduce").val();
+        $.post("/center/index/insertVideoInformation",data,function(data){
+            console.log(data);
+            //data = JSON.parse(data||"null");
+            //var sign = data.MESSAGE;
+            //$("#signEmail").html(sign);
+        });
     }
 }

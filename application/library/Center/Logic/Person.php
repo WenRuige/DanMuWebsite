@@ -43,7 +43,7 @@ class Center_Logic_Person {
             return $result;
         }
     }
-    //获取用户的相信信息
+    //获取用户的详细信息
     public function getPersonInformation($userId = ''){
         try{
             //昵称,爱好,位置,自我介绍
@@ -57,6 +57,55 @@ class Center_Logic_Person {
                 );
                 return $result;
             }
+        }catch(Exception $e){
+            $result  = array(
+                "CODE"      => Base_Error::MYSQL_EXECUTE_ERROR,
+                "MESSAGE"   => "查询失败!"
+            );
+            return $result;
+        }
+    }
+    //获取栏目的信息
+    public function getColumnInformation(){
+        try {
+            $columnModel = new ColumnsModel();
+            $res = $columnModel->getColumnInformation(['id', 'name']);
+            if ($res) {
+                $result = array(
+                    "CODE"      => Base_Error::MYSQL_EXECUTE_SUCCESS,
+                    "MESSAGE"   => "查询成功",
+                    "RES"       => $res
+                );
+                return $result;
+            }
+        }catch(Exception $e){
+            $result  = array(
+                "CODE"      => Base_Error::MYSQL_EXECUTE_ERROR,
+                "MESSAGE"   => "查询失败!"
+            );
+            return $result;
+        }
+    }
+    //插入视频信息
+    public function insertVideoInformation($param){
+        try{
+        $videoModel = new VideoModel();
+        $info = $videoModel->insertVideoInformation($param);
+        if(!empty($info)){
+            $result = array(
+                "CODE"      => Base_Error::MYSQL_EXECUTE_SUCCESS,
+                "MESSAGE"   => "插入成功",
+                "RES"       => $info
+            );
+            return $result;
+        }else{
+            $result = array(
+                "CODE"      => Base_Error::MYSQL_EXECUTE_SUCCESS,
+                "MESSAGE"   => "插入失败",
+                "RES"       => $info
+            );
+            return $result;
+        }
         }catch(Exception $e){
             $result  = array(
                 "CODE"      => Base_Error::MYSQL_EXECUTE_ERROR,

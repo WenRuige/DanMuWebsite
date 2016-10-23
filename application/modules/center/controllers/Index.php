@@ -16,8 +16,12 @@ class IndexController extends Base_Controller_Page{
         $userId = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
         //获取用户的个人信息
         $centerLogic = new Center_Logic_Person();
-        $userInfo = $centerLogic->getPersonInformation($userId);
-        dump($userInfo['RES']);
+        $userInfo    = $centerLogic->getPersonInformation($userId);
+        //获取栏目信息
+        $columnsInfo  = $centerLogic->getColumnInformation();
+        if($columnsInfo['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
+            $this->getView()->assign('columns',$columnsInfo['RES']);
+        }
         if($userInfo['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
             $this->getView()->assign('userInfo',$userInfo['RES']);
         }
@@ -43,5 +47,26 @@ class IndexController extends Base_Controller_Page{
         $centerLogic = new Center_Logic_Person();
         $info = $centerLogic->updatePersonInformation($user_id,$inputParam);
         echo json_encode($info);
+    }
+    //增加视频
+    public function insertVideoInformationAction(){
+        $user_id = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
+        //视频名称
+        $inputParam['name']         =  Base_Request::getRequest('name',null);
+        //栏目Id
+        $inputParam['columns_id']   =  Base_Request::getRequest('columns_id',null);
+        //视频
+        $inputParam['video']        =  Base_Request::getRequest('video',null);
+        //标签
+        $inputParam['tag']          =  Base_Request::getRequest('tag',null);
+        //视频介绍
+        $inputParam['introduce']    =  Base_Request::getRequest('introduce',null);
+        //过滤
+        $inputParam['user_id']      =  $user_id;
+        $inputParam  = array_filter($inputParam);
+        $centerLogic = new Center_Logic_Person();
+        $info = $centerLogic->insertVideoInformation($inputParam);
+        echo json_encode($info);
+
     }
 }

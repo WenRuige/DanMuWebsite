@@ -2,8 +2,6 @@
 {block name="content"}
 <section class="content">
     <link rel="stylesheet" href="{$stroot}/plugins/select2/select2.min.css">
-    {*<script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>*}
-    {*<script src="{$stroot}/plugins/uploadify/jquery.uploadify.js"></script>*}
     <link rel="stylesheet" href="{$stroot}/plugins/uploadify/uploadify.css">
     <div class="row">
         <div class="col-md-3">
@@ -84,7 +82,7 @@
                     <li class="active"><a href="#activity" data-toggle="tab">动态</a></li>
                     <li><a href="#timeline" data-toggle="tab">时间轴</a></li>
                     <li><a href="#settings" data-toggle="tab">个人设置</a></li>
-                    <li><a href="#video_upload" data-toggle="tab">视频上传</a></li>
+                    <li><a href="#video" data-toggle="tab">视频上传</a></li>
                     <li><a href="#settings" data-toggle="tab">上传的视频</a></li>
                 </ul>
                 <div class="tab-content">
@@ -316,20 +314,8 @@
                                 <input id="file_upload" name="file_upload" type="file" multiple="true">
                                     照片名称:<span id="url"></span>
                                     </div>
+                            </div>
 
-                                </div>
-
-
-
-
-                            <!--<div class="form-group">
-                                <label for="inputName" class="col-sm-2 control-label">头像</label>
-
-                                <div class="col-sm-10">
-                                    <div id="queue"></div>
-                                    <input id="file_upload" name="file_upload" type="file" multiple="true">
-                                </div>
-                            </div>-->
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
@@ -384,48 +370,45 @@
                         </form>
                     </div>
 
-                    <div class="tab-pane" id="video_upload">
-                        <form class="form-horizontal">
+                    <div class="tab-pane" id="video">
+                        <form class="form-horizontal" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">视频名称</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nickname" placeholder="姓名">
+                                    <input type="text" class="form-control" id="video_name" placeholder="视频名称">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail" class="col-sm-2 control-label">l</label>
+                                <label for="inputEmail" class="col-sm-2 control-label">栏目</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="video_columns">
+                                       {foreach from=$columns key=k item=v}
+                                           <option value="{$v.id}">{$v.name}</option>
 
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="职位">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputName" class="col-sm-2 control-label">位置</label>
+                                       {/foreach}
 
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName" placeholder="位置">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" >爱好</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control select2" multiple="multiple" data-placeholder="选择一个或者多个"style="width: 100%">
-                                        <option>PHP</option>
-                                        <option>JAVASCRIPT</option>
-                                        <option>PYTHON</option>
-                                        <option>C++</option>
-                                        <option>C</option>
-                                        <option>C#</option>
-                                        <option>我啥也不会</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
+                                <label for="inputEmail" class="col-sm-2 control-label">上传视频</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                    <div id="queue"></div>
+                                    <input id="video_upload" name="video_upload" type="file" multiple="true">
+                                    视频名称:<span id="video_url"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">标签</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="tag" placeholder="标签按照','来分隔">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSkills" class="col-sm-2 control-label">视频介绍</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id = "video_introduce" rows="3" placeholder="Enter ...">{$userInfo['introduce']}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -439,7 +422,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                    <button type="button"  onclick="videoInfo.insertVideoInformation()" class="btn btn-danger">提交</button>
                                 </div>
                             </div>
                         </form>
@@ -467,6 +450,16 @@
                 'uploader' : '{$stroot}/plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
                     $("#url").text(data);
+                }
+            });
+        });
+        $(document).ready(function () {
+            jQuery('#video_upload').uploadify({
+                'buttonText' : '点击上传',
+                'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
+                'uploader' : '{$stroot}/plugins/uploadify/uploadify.php',
+                'onUploadSuccess' : function(file, data, response){
+                    $("#video_url").text(data);
                 }
             });
         });

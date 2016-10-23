@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-23 11:17:37
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-23 13:30:42
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:132670525580c2bd10e5d51-27740371%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1674172002580c4b02b16292-48316008%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1477192655,
+      1 => 1477200640,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '132670525580c2bd10e5d51-27740371',
+  'nocache_hash' => '1674172002580c4b02b16292-48316008',
   'function' => 
   array (
   ),
@@ -342,7 +342,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                     <li class="active"><a href="#activity" data-toggle="tab">动态</a></li>
                     <li><a href="#timeline" data-toggle="tab">时间轴</a></li>
                     <li><a href="#settings" data-toggle="tab">个人设置</a></li>
-                    <li><a href="#video_upload" data-toggle="tab">视频上传</a></li>
+                    <li><a href="#video" data-toggle="tab">视频上传</a></li>
                     <li><a href="#settings" data-toggle="tab">上传的视频</a></li>
                 </ul>
                 <div class="tab-content">
@@ -575,20 +575,8 @@ if ($_smarty_tpl->_count($_from) > 0){
                                 <input id="file_upload" name="file_upload" type="file" multiple="true">
                                     照片名称:<span id="url"></span>
                                     </div>
+                            </div>
 
-                                </div>
-
-
-
-
-                            <!--<div class="form-group">
-                                <label for="inputName" class="col-sm-2 control-label">头像</label>
-
-                                <div class="col-sm-10">
-                                    <div id="queue"></div>
-                                    <input id="file_upload" name="file_upload" type="file" multiple="true">
-                                </div>
-                            </div>-->
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-2 control-label">职位</label>
 
@@ -636,48 +624,54 @@ if ($_smarty_tpl->_count($_from) > 0){
                         </form>
                     </div>
 
-                    <div class="tab-pane" id="video_upload">
-                        <form class="form-horizontal">
+                    <div class="tab-pane" id="video">
+                        <form class="form-horizontal" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-2 control-label">视频名称</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nickname" placeholder="姓名">
+                                    <input type="text" class="form-control" id="video_name" placeholder="视频名称">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail" class="col-sm-2 control-label">l</label>
+                                <label for="inputEmail" class="col-sm-2 control-label">栏目</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="video_columns">
+                                       <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('columns')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value){
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
+?>
+                                           <option value="<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
+</option>
 
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="职位">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputName" class="col-sm-2 control-label">位置</label>
+                                       <?php }} ?>
 
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName" placeholder="位置">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" >爱好</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control select2" multiple="multiple" data-placeholder="选择一个或者多个"style="width: 100%">
-                                        <option>PHP</option>
-                                        <option>JAVASCRIPT</option>
-                                        <option>PYTHON</option>
-                                        <option>C++</option>
-                                        <option>C</option>
-                                        <option>C#</option>
-                                        <option>我啥也不会</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
+                                <label for="inputEmail" class="col-sm-2 control-label">上传视频</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                    <div id="queue"></div>
+                                    <input id="video_upload" name="video_upload" type="file" multiple="true">
+                                    视频名称:<span id="video_url"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">标签</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="tag" placeholder="标签按照','来分隔">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSkills" class="col-sm-2 control-label">视频介绍</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id = "video_introduce" rows="3" placeholder="Enter ..."><?php echo $_smarty_tpl->getVariable('userInfo')->value['introduce'];?>
+</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -691,7 +685,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                    <button type="button"  onclick="videoInfo.insertVideoInformation()" class="btn btn-danger">提交</button>
                                 </div>
                             </div>
                         </form>
@@ -723,6 +717,18 @@ if ($_smarty_tpl->_count($_from) > 0){
 /plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
                     $("#url").text(data);
+                }
+            });
+        });
+        $(document).ready(function () {
+            jQuery('#video_upload').uploadify({
+                'buttonText' : '点击上传',
+                'swf'      : "<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/uploadify/uploadify.swf",
+                'uploader' : '<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/plugins/uploadify/uploadify.php',
+                'onUploadSuccess' : function(file, data, response){
+                    //$("#url").text(data);
                 }
             });
         });
