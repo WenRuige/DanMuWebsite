@@ -385,9 +385,7 @@
                                     <select class="form-control" id="video_columns">
                                        {foreach from=$columns key=k item=v}
                                            <option value="{$v.id}">{$v.name}</option>
-
                                        {/foreach}
-
                                     </select>
                                 </div>
                             </div>
@@ -408,7 +406,7 @@
                             <div class="form-group">
                                 <label for="inputSkills" class="col-sm-2 control-label">视频介绍</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" id = "video_introduce" rows="3" placeholder="Enter ...">{$userInfo['introduce']}</textarea>
+                                    <textarea class="form-control" id = "video_introduce" rows="3" placeholder="Enter ..."></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -422,7 +420,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="button"  onclick="videoInfo.insertVideoInformation()" class="btn btn-danger">提交</button>
+                                    <button type="button" id="video_button" onclick="videoInfo.insertVideoInformation()" class="btn btn-danger">提交</button>
                                 </div>
                             </div>
                         </form>
@@ -440,7 +438,6 @@
 </section>
 
     <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
-
     <script src="{$stroot}/plugins/uploadify/jquery.uploadify.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -452,8 +449,6 @@
                     $("#url").text(data);
                 }
             });
-        });
-        $(document).ready(function () {
             jQuery('#video_upload').uploadify({
                 'buttonText' : '点击上传',
                 'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
@@ -463,6 +458,7 @@
                 }
             });
         });
+
     </script>
     <script src="{$stroot}/logicJs/center/person.js"></script>
     <script src="../../plugins/select2/select2.full.min.js"></script>

@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-23 13:30:42
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-23 22:48:20
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1674172002580c4b02b16292-48316008%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1923970662580ccdb44f6d20-28281255%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1477200640,
+      1 => 1477233778,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1674172002580c4b02b16292-48316008',
+  'nocache_hash' => '1923970662580ccdb44f6d20-28281255',
   'function' => 
   array (
   ),
@@ -647,9 +647,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                                            <option value="<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
 </option>
-
                                        <?php }} ?>
-
                                     </select>
                                 </div>
                             </div>
@@ -670,8 +668,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                             <div class="form-group">
                                 <label for="inputSkills" class="col-sm-2 control-label">视频介绍</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" id = "video_introduce" rows="3" placeholder="Enter ..."><?php echo $_smarty_tpl->getVariable('userInfo')->value['introduce'];?>
-</textarea>
+                                    <textarea class="form-control" id = "video_introduce" rows="3" placeholder="Enter ..."></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -685,7 +682,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="button"  onclick="videoInfo.insertVideoInformation()" class="btn btn-danger">提交</button>
+                                    <button type="button" id="video_button" onclick="videoInfo.insertVideoInformation()" class="btn btn-danger">提交</button>
                                 </div>
                             </div>
                         </form>
@@ -704,7 +701,6 @@ if ($_smarty_tpl->_count($_from) > 0){
 
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/jQuery/jquery-2.2.3.min.js"></script>
-
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/jquery.uploadify.js"></script>
     <script type="text/javascript">
@@ -719,8 +715,6 @@ if ($_smarty_tpl->_count($_from) > 0){
                     $("#url").text(data);
                 }
             });
-        });
-        $(document).ready(function () {
             jQuery('#video_upload').uploadify({
                 'buttonText' : '点击上传',
                 'swf'      : "<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
@@ -728,10 +722,11 @@ if ($_smarty_tpl->_count($_from) > 0){
                 'uploader' : '<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
-                    //$("#url").text(data);
+                    $("#video_url").text(data);
                 }
             });
         });
+
     </script>
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /logicJs/center/person.js"></script>

@@ -22,7 +22,9 @@ class Center_Logic_Person {
             //如果照片路由不为空的话,更新的时候需要把原来的照片删掉节省空间
             if(!empty($param['photo_url'])){
                 $photo_url = $userObj->getUserInformation(['photo_url'],["id" =>$user_id]);
-                $filepath = APP_UPLOADS.'/'.$user_id.'/'.$photo_url;
+                $filepath = APP_UPLOADS.'/'.$user_id.'/'.$photo_url['photo_url'];
+//                $file = 'log.txt';
+//                file_put_contents($file,$filepath,FILE_APPEND);
                 @unlink($filepath);
             }
 

@@ -12,8 +12,8 @@ class IndexController extends Base_Controller_Page{
     }
 
     public function  indexAction(){
-        echo APP_PATH;
         $userId = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
+
         //获取用户的个人信息
         $centerLogic = new Center_Logic_Person();
         $userInfo    = $centerLogic->getPersonInformation($userId);
@@ -27,7 +27,6 @@ class IndexController extends Base_Controller_Page{
         }
         $this->getView()->display('center/center.tpl');
     }
-
 
    //更新个人信息
     public function updatePersonInformationAction(){
@@ -63,10 +62,12 @@ class IndexController extends Base_Controller_Page{
         $inputParam['introduce']    =  Base_Request::getRequest('introduce',null);
         //过滤
         $inputParam['user_id']      =  $user_id;
+        $inputParam['created_at']   = date('Y-m-d H:i:s');
         $inputParam  = array_filter($inputParam);
         $centerLogic = new Center_Logic_Person();
         $info = $centerLogic->insertVideoInformation($inputParam);
-        echo json_encode($info);
-
+        if($info['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
+            echo json_encode($info);
+        }
     }
 }
