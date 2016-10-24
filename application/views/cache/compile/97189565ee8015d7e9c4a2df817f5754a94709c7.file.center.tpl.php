@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-23 22:48:20
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-24 09:20:47
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1923970662580ccdb44f6d20-28281255%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1600769429580d61efbe4e16-64294963%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1477233778,
+      1 => 1477272046,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1923970662580ccdb44f6d20-28281255',
+  'nocache_hash' => '1600769429580d61efbe4e16-64294963',
   'function' => 
   array (
   ),
@@ -343,7 +343,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                     <li><a href="#timeline" data-toggle="tab">时间轴</a></li>
                     <li><a href="#settings" data-toggle="tab">个人设置</a></li>
                     <li><a href="#video" data-toggle="tab">视频上传</a></li>
-                    <li><a href="#settings" data-toggle="tab">上传的视频</a></li>
+                    <li><a href="#video_uploaded" data-toggle="tab">上传的视频</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="active tab-pane" id="activity">
@@ -687,6 +687,50 @@ if ($_smarty_tpl->_count($_from) > 0){
                             </div>
                         </form>
                     </div>
+
+
+                    <div class="tab-pane" id="video_uploaded">
+                        <form class="form-horizontal" enctype="multipart/form-data">
+                                <!--<div class="box-header">
+                                    <h3 class="box-title">Condensed Full Width Table</h3>
+                                </div>-->
+                                <!-- /.box-header -->
+                                <div class="box-body no-padding">
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <th style="width: 10px">id</th>
+                                            <th>视频名称</th>
+                                            <th>缩略图</th>
+                                            <th style="width: 40px">标签</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Update software</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-red">55%</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-primary">修改</span>
+                                                <span class="label label-danger">删除</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- /.box-body -->
+                            <!--<div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" id="video_button"  class="btn btn-danger">提交</button>
+                                </div>
+                            </div>-->
+                        </form>
+                    </div>
+
                     <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->
