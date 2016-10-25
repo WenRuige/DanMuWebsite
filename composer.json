@@ -5,6 +5,8 @@
         "psr/log": "^1.0",
         "yzalis/identicon": "^1.1",
         "swiftmailer/swiftmailer": "^5.4",
-        "nesbot/carbon": "^1.21"
+        "nesbot/carbon": "^1.21",
+        "elasticsearch/elasticsearch": "^2.2",
+        "php-ffmpeg/php-ffmpeg": "^0.6.1"
     }
 }
