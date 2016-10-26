@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-24 09:20:47
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-26 14:17:46
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1600769429580d61efbe4e16-64294963%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:118904821358104a8a15e2b3-42655286%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1477272046,
+      1 => 1477462664,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1600769429580d61efbe4e16-64294963',
+  'nocache_hash' => '118904821358104a8a15e2b3-42655286',
   'function' => 
   array (
   ),
@@ -748,6 +748,7 @@ if ($_smarty_tpl->_count($_from) > 0){
     <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/jquery.uploadify.js"></script>
     <script type="text/javascript">
+
         $(document).ready(function () {
             jQuery('#file_upload').uploadify({
                 'buttonText' : '点击上传',
@@ -766,6 +767,12 @@ if ($_smarty_tpl->_count($_from) > 0){
                 'uploader' : '<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
+                    var dataObj = { };
+                    dataObj['videoName'] = data;
+                    $.post("/center/tool/convertPicture",dataObj,function(data){
+                        alert(data);
+                    });
+
                     $("#video_url").text(data);
                 }
             });

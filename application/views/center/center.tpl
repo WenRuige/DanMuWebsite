@@ -484,6 +484,7 @@
     <script src="{$stroot}/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="{$stroot}/plugins/uploadify/jquery.uploadify.js"></script>
     <script type="text/javascript">
+
         $(document).ready(function () {
             jQuery('#file_upload').uploadify({
                 'buttonText' : '点击上传',
@@ -498,6 +499,12 @@
                 'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
                 'uploader' : '{$stroot}/plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
+                    var dataObj = { };
+                    dataObj['videoName'] = data;
+                    $.post("/center/tool/convertPicture",dataObj,function(data){
+                        alert(data);
+                    });
+
                     $("#video_url").text(data);
                 }
             });

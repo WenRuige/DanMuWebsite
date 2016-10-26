@@ -48,7 +48,7 @@ var videoInfo = {
         console.log(data);
         console.log(data);
         $.post("/center/index/insertVideoInformation",data,function(data){
-            console.log(data);
+
 
         });
     }

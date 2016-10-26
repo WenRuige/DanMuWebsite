@@ -24,6 +24,9 @@ $result = array(
 考虑引进php ffmpeg 截取视频中某一贞作为封面
 引进composer ffmpeg 可以截取视频的帧数作为封面图片
 
+将截取的视频图片生成gif图片
+
+
 考虑引进队列系统 gearman
 //
 elastic
