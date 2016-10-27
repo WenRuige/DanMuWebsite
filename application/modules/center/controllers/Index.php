@@ -13,7 +13,7 @@ class IndexController extends Base_Controller_Page{
 
     public function  indexAction(){
         $userId = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
-
+        dump($userId);
         //获取用户的个人信息
         $centerLogic = new Center_Logic_Person();
         $userInfo    = $centerLogic->getPersonInformation($userId);

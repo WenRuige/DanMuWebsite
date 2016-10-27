@@ -38,10 +38,11 @@ class ToolController extends Base_Controller_Page{
         if(!empty($videoName) && !empty($user_id)){
             //实例化视频处理插件,将视频处理成图片
             $FFMpegObj = new Base_FFMpeg();
-            $FFMpegObj->videoToPicture($videoPath,$savePath,$videoName);
+            $res = $FFMpegObj->videoToPicture($videoPath,$savePath,$videoName);
+            echo $res;
             //如果成功的话,将图片处理为gif图片
-
-
+        }else{
+            echo '有些不太对';
         }
     }
 

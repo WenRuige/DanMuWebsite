@@ -23,13 +23,21 @@ class Base_FFMpeg
     //(1)视频路径(名称)
     //(2)要把图片保存的路径
     public function videoToPicture($file,$path,$videoName){
+        //去除videoName的结尾
+        $temp = explode('.',$videoName);
+        $videoName = $temp[0];
         $video = $this->FFmpeg->open($file);
         $video->filters()
             ->resize(new FFMpeg\Coordinate\Dimension(320, 240))
             ->synchronize();
-        for($i = 0; $i < 100 ;$i+=10){
-            $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds($i))->save($path.'/'.$videoName);
+        //初始化
+        $j = 0;
+        //最大生成5张照片,如果视频时长不到50
+        for($i = 0; $i < 50 ;$i){
+            $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds($i))->save($path.'/'.$videoName.'_'.$j.'.jpg');
+            $j++;
         }
+        return ;
 
     }
 
