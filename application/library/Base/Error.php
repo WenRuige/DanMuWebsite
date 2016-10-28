@@ -30,4 +30,6 @@ class Base_Error{
     const ACCOUNT_EXECUTE_SUCCESS    = '00009';
     //不能为空
     const CAN_NOT_BE_BLANK           = '00010';
+    //执行成功
+    const SYSTEM_SUCCESS             = '00011';
 }

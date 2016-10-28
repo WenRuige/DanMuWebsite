@@ -90,7 +90,7 @@
                         <!-- Post -->
                         <div class="post">
                             <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                <img class="img-circle img-bordered-sm" src="{$stroot}/dist/img/user1-128x128.jpg" alt="user image">
                         <span class="username">
                           <a href="#">Jonathan Burke Jr.</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -121,7 +121,7 @@
                         <!-- Post -->
                         <div class="post clearfix">
                             <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                                <img class="img-circle img-bordered-sm" src="{$stroot}/dist/img/user7-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Sarah Ross</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -153,7 +153,7 @@
                         <!-- Post -->
                         <div class="post">
                             <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
+                                <img class="img-circle img-bordered-sm" src="{$stroot}/dist/img/user6-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Adam Jones</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -163,21 +163,21 @@
                             <!-- /.user-block -->
                             <div class="row margin-bottom">
                                 <div class="col-sm-6">
-                                    <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                                    <img class="img-responsive" src="{$stroot}/dist/img/photo1.png" alt="Photo">
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-6">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <img class="img-responsive" src="../../dist/img/photo2.png" alt="Photo">
+                                            <img class="img-responsive" src="{$stroot}/dist/img/photo2.png" alt="Photo">
                                             <br>
-                                            <img class="img-responsive" src="../../dist/img/photo3.jpg" alt="Photo">
+                                            <img class="img-responsive" src="{$stroot}/dist/img/photo3.jpg" alt="Photo">
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-sm-6">
-                                            <img class="img-responsive" src="../../dist/img/photo4.jpg" alt="Photo">
+                                            <img class="img-responsive" src="{$stroot}/dist/img/photo4.jpg" alt="Photo">
                                             <br>
-                                            <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                                            <img class="img-responsive" src="{$stroot}/dist/img/photo1.png" alt="Photo">
                                         </div>
                                         <!-- /.col -->
                                     </div>

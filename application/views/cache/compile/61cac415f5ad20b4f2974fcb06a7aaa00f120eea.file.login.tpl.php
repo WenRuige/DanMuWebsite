@@ -1,24 +1,23 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-09-29 15:59:44
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-28 09:03:47
          compiled from "/private/var/www/yaf_personal/application/views/login/login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:63442480157ecc9f06489b9-33128935%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:19943151215812a3f3ac9c89-72927005%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '61cac415f5ad20b4f2974fcb06a7aaa00f120eea' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/login/login.tpl',
-      1 => 1475102784,
+      1 => 1477616626,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '63442480157ecc9f06489b9-33128935',
+  'nocache_hash' => '19943151215812a3f3ac9c89-72927005',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <meta name="keywords" content="" />

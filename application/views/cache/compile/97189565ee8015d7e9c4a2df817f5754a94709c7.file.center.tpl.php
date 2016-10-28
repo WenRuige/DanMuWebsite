@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-26 14:17:46
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-28 08:30:06
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:118904821358104a8a15e2b3-42655286%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:100159423258129c0e9a4840-18279545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1477462664,
+      1 => 1477614604,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '118904821358104a8a15e2b3-42655286',
+  'nocache_hash' => '100159423258129c0e9a4840-18279545',
   'function' => 
   array (
   ),
@@ -350,7 +350,8 @@ if ($_smarty_tpl->_count($_from) > 0){
                         <!-- Post -->
                         <div class="post">
                             <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                <img class="img-circle img-bordered-sm" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/user1-128x128.jpg" alt="user image">
                         <span class="username">
                           <a href="#">Jonathan Burke Jr.</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -381,7 +382,8 @@ if ($_smarty_tpl->_count($_from) > 0){
                         <!-- Post -->
                         <div class="post clearfix">
                             <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                                <img class="img-circle img-bordered-sm" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/user7-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Sarah Ross</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -413,7 +415,8 @@ if ($_smarty_tpl->_count($_from) > 0){
                         <!-- Post -->
                         <div class="post">
                             <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
+                                <img class="img-circle img-bordered-sm" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/user6-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Adam Jones</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -423,21 +426,26 @@ if ($_smarty_tpl->_count($_from) > 0){
                             <!-- /.user-block -->
                             <div class="row margin-bottom">
                                 <div class="col-sm-6">
-                                    <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                                    <img class="img-responsive" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/photo1.png" alt="Photo">
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-6">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <img class="img-responsive" src="../../dist/img/photo2.png" alt="Photo">
+                                            <img class="img-responsive" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/photo2.png" alt="Photo">
                                             <br>
-                                            <img class="img-responsive" src="../../dist/img/photo3.jpg" alt="Photo">
+                                            <img class="img-responsive" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/photo3.jpg" alt="Photo">
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-sm-6">
-                                            <img class="img-responsive" src="../../dist/img/photo4.jpg" alt="Photo">
+                                            <img class="img-responsive" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/photo4.jpg" alt="Photo">
                                             <br>
-                                            <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                                            <img class="img-responsive" src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/dist/img/photo1.png" alt="Photo">
                                         </div>
                                         <!-- /.col -->
                                     </div>

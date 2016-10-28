@@ -11,20 +11,6 @@ class ToolController extends Base_Controller_Page{
         $this->setNeedLogin(false);
         parent::init();
     }
-    //处理图片数据
-//    public function handlePictureAction($file){
-//        $ffmeg = \FFMpeg\FFMpeg::create([
-//            'ffmpeg.binaries'  => '/usr/local/bin/ffmpeg',
-//            'ffprobe.binaries' => '/usr/local/bin/ffprobe'
-//        ]);
-//        $video = $ffmeg->open($file);
-//        $video->filters()
-//            ->resize(new FFMpeg\Coordinate\Dimension(320, 240))
-//            ->synchronize();
-//        $video
-//            ->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(10))
-//            ->save('frame.jpg');
-//    }
     //将视频转化为图片
     public function convertPictureAction(){
         //视频名称
@@ -38,8 +24,20 @@ class ToolController extends Base_Controller_Page{
         if(!empty($videoName) && !empty($user_id)){
             //实例化视频处理插件,将视频处理成图片
             $FFMpegObj = new Base_FFMpeg();
+            //回传的为名称
             $res = $FFMpegObj->videoToPicture($videoPath,$savePath,$videoName);
-            echo $res;
+            //如果回传的文件名称不为空的话
+            if(!empty($res)){
+              //循环将图片放入数组中
+               $image = new Base_Imagick();
+                //传递过去的参数分别为 1,保存路径2,图片名称3,生成图片类别
+               $res = $image->pictureToGif($savePath,$res,'gif');
+                if($res['CODE'] == Base_Error::SYSTEM_SUCCESS){
+                    echo "缩略图生成成功!";
+                }else{
+                    echo "缩略图生成失败!";
+                }
+            }
             //如果成功的话,将图片处理为gif图片
         }else{
             echo '有些不太对';

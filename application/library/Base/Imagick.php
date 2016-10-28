@@ -16,42 +16,37 @@ class Base_Imagick{
         }
     }
     //将图片转换为GIF
-    public function pictureToGif($type){
+    public function pictureToGif($savePath,$fileName,$type = 'gif'){
+        $fileList = array();
+        for($i = 0 ;$i < 5 ;$i++){
+            $fileList[] = $savePath.'/'.$fileName.'_'.$i.'.jpg';
+        }
         $animation = $this->imagick;
         $animation->setFormat($type);
-        $animation->setFormat($type);
-        foreach ( $filelist as $file ){
+        foreach ($fileList as $file ){
             $image = $this->imagick;
-            $image->readImage( $file );  //合并图片
-            $animation->addImage( $image ); //加入到对象
-            $animation->setImageDelay($num); //设定图片帧数
+            $image->readImage($file);  //合并图片
+            $animation->addImage($image ); //加入到对象
+            $animation->setImageDelay(10); //设定图片帧数
             unset( $image );    //清除内存里的图像，释放内存
         }
-        //以下两行是调试时用的，测试是否生成了gif图片
-        //header( "Content-Type: image/gif" );
-        //echo( $animation->getImagesBlob() );
-        //生成的GIF文件名组合
-        //生成GIF图片
-        $images = time(). '.' . $type;
-       $animation->writeImages( $images,true );
-//        //保存GIF到指定文件夹
-//        copy($images, $path . $images);
-//        //是否预览
-//        if($is)
-//        {
-//            echo '已生成gif图片: ' . $images . '<br />';
-//            echo "<img src='" . $path . $images . "' />";
-//        }
-//        else
-//        {
-//            echo '已生成gif图片: ' . $images . '<br />';
-//        }
-//        //删除原来保存的图片
-//        unlink($images);
-
-
-
+       $animation->writeImages($savePath.'/'.$fileName.'.gif',true);
+        //如果该gif存在的话
+        if(file_exists($savePath.'/'.$fileName.'.gif')){
+            for($i = 0 ;$i < 5 ;$i++){
+                 unlink($savePath.'/'.$fileName.'_'.$i.'.jpg');
+            }
+            $result = array(
+                'CODE'    => Base_Error::SYSTEM_SUCCESS,
+                'MESSAGE' =>"成功!"
+            );
+            return $result;
+        }else{
+            $result = array(
+                'CODE'    => Base_Error::SYSTEM_LEVEL_ERROR,
+                'MESSAGE' =>"失败!"
+            );
+            return $result;
+        }
     }
-
-
 }
