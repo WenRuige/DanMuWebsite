@@ -20,22 +20,24 @@ class ToolController extends Base_Controller_Page{
          $videoPath = APP_UPLOADS.'/'.$user_id.'/'.$videoName;
          //保存路径
          $savePath  = APP_UPLOADS.'/'.$user_id;
+         //展示路径
+         $showPath  = 'uploads/'.$user_id;
          //如果传递过来的视频名称和用户id都不为空的话
         if(!empty($videoName) && !empty($user_id)){
             //实例化视频处理插件,将视频处理成图片
             $FFMpegObj = new Base_FFMpeg();
             //回传的为名称
-            $res = $FFMpegObj->videoToPicture($videoPath,$savePath,$videoName);
+            $res = $FFMpegObj->videoToPicture($videoPath,$savePath,$videoName,$showPath);
             //如果回传的文件名称不为空的话
             if(!empty($res)){
               //循环将图片放入数组中
                $image = new Base_Imagick();
-                //传递过去的参数分别为 1,保存路径2,图片名称3,生成图片类别
-               $res = $image->pictureToGif($savePath,$res,'gif');
+                //传递过去的参数分别为 1,保存路径2,图片名称3,生成图片类别4,展示路径
+               $res = $image->pictureToGif($savePath,$res,'gif',$showPath);
                 if($res['CODE'] == Base_Error::SYSTEM_SUCCESS){
-                    echo "缩略图生成成功!";
+                    echo json_encode($res);
                 }else{
-                    echo "缩略图生成失败!";
+                    echo json_encode($res);
                 }
             }
             //如果成功的话,将图片处理为gif图片

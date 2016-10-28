@@ -395,6 +395,7 @@
                                     <div id="queue"></div>
                                     <input id="video_upload" name="video_upload" type="file" multiple="true">
                                     视频名称:<span id="video_url"></span>
+                                    <span id="picture_url"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -499,12 +500,16 @@
                 'swf'      : "{$stroot}/plugins/uploadify/uploadify.swf",
                 'uploader' : '{$stroot}/plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
+                    alert('文件视频处理中,请稍后');
                     var dataObj = { };
                     dataObj['videoName'] = data;
                     $.post("/center/tool/convertPicture",dataObj,function(data){
-                        alert(data);
+                         list  = JSON.parse(data||"null");
+                        console.log(list);
+                        var imgObj="<p style='float:right'><img src={$stroot}/"+list.RES+" width=130px></p>";
+                        var str = '<img src="{$stroot}"'+list.RES+'">';
+                        $("#picture_url").append(imgObj);
                     });
-
                     $("#video_url").text(data);
                 }
             });

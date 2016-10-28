@@ -67,7 +67,7 @@ class IndexController extends Base_Controller_Page{
         $centerLogic = new Center_Logic_Person();
         $info = $centerLogic->insertVideoInformation($inputParam);
         if($info['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
-            echo json_encode($info);
+
         }
     }
 }

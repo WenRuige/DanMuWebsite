@@ -16,7 +16,7 @@ class Base_Imagick{
         }
     }
     //将图片转换为GIF
-    public function pictureToGif($savePath,$fileName,$type = 'gif'){
+    public function pictureToGif($savePath,$fileName,$type = 'gif',$showPath = ''){
         $fileList = array();
         for($i = 0 ;$i < 5 ;$i++){
             $fileList[] = $savePath.'/'.$fileName.'_'.$i.'.jpg';
@@ -28,7 +28,7 @@ class Base_Imagick{
             $image->readImage($file);  //合并图片
             $animation->addImage($image ); //加入到对象
             $animation->setImageDelay(10); //设定图片帧数
-            unset( $image );    //清除内存里的图像，释放内存
+            unset($image);    //清除内存里的图像，释放内存
         }
        $animation->writeImages($savePath.'/'.$fileName.'.gif',true);
         //如果该gif存在的话
@@ -36,15 +36,18 @@ class Base_Imagick{
             for($i = 0 ;$i < 5 ;$i++){
                  unlink($savePath.'/'.$fileName.'_'.$i.'.jpg');
             }
+            $finalPath = $showPath.'/'.$fileName.'.gif';
             $result = array(
                 'CODE'    => Base_Error::SYSTEM_SUCCESS,
-                'MESSAGE' =>"成功!"
+                'MESSAGE' => "成功!",
+                'RES'     => $finalPath
             );
             return $result;
         }else{
             $result = array(
                 'CODE'    => Base_Error::SYSTEM_LEVEL_ERROR,
-                'MESSAGE' =>"失败!"
+                'MESSAGE' =>"失败!",
+                'RES'     => ''
             );
             return $result;
         }

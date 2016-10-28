@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-28 08:30:06
+<?php /* Smarty version Smarty-3.0.8, created on 2016-10-28 15:56:21
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:100159423258129c0e9a4840-18279545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:369344843581304a5826023-28162116%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1477614604,
+      1 => 1477641379,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '100159423258129c0e9a4840-18279545',
+  'nocache_hash' => '369344843581304a5826023-28162116',
   'function' => 
   array (
   ),
@@ -665,6 +665,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                                     <div id="queue"></div>
                                     <input id="video_upload" name="video_upload" type="file" multiple="true">
                                     视频名称:<span id="video_url"></span>
+                                    <span id="picture_url"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -775,12 +776,18 @@ if ($_smarty_tpl->_count($_from) > 0){
                 'uploader' : '<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /plugins/uploadify/uploadify.php',
                 'onUploadSuccess' : function(file, data, response){
+                    alert('文件视频处理中,请稍后');
                     var dataObj = { };
                     dataObj['videoName'] = data;
                     $.post("/center/tool/convertPicture",dataObj,function(data){
-                        alert(data);
+                         list  = JSON.parse(data||"null");
+                        console.log(list);
+                        var imgObj="<p style='float:right'><img src=<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/"+list.RES+" width=130px></p>";
+                        var str = '<img src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+"'+list.RES+'">';
+                        $("#picture_url").append(imgObj);
                     });
-
                     $("#video_url").text(data);
                 }
             });
