@@ -443,22 +443,27 @@
                                             <th style="width: 40px">标签</th>
                                             <th>操作</th>
                                         </tr>
+
+                                            {foreach from=$video key=k item=v}
                                         <tr>
-                                            <td>1.</td>
-                                            <td>Update software</td>
-                                            <td>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-red">55%</span>
-                                            </td>
-                                            <td>
-                                                <span class="label label-primary">修改</span>
-                                                <span class="label label-danger">删除</span>
-                                            </td>
+                                                <td>{$v.id}</td>
+                                                <td>{$v.title}</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-red">{$v.tag}</span>
+                                                </td>
+                                                <td>
+                                                    <span class="label label-primary">修改</span>
+                                                    <span class="label label-danger">删除</span>
+                                                </td>
                                         </tr>
+                                                {/foreach}
+
+
                                     </table>
                                 </div>
                                 <!-- /.box-body -->

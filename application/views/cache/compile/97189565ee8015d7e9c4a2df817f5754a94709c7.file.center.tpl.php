@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-28 15:56:21
+<?php /* Smarty version Smarty-3.0.8, created on 2016-11-02 21:37:15
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:369344843581304a5826023-28162116%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:13131773905819ec0b3fb4e0-59275123%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1477641379,
+      1 => 1478093834,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '369344843581304a5826023-28162116',
+  'nocache_hash' => '13131773905819ec0b3fb4e0-59275123',
   'function' => 
   array (
   ),
@@ -713,22 +713,36 @@ if ($_smarty_tpl->_count($_from) > 0){
                                             <th style="width: 40px">标签</th>
                                             <th>操作</th>
                                         </tr>
+
+                                            <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('video')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value){
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
+?>
                                         <tr>
-                                            <td>1.</td>
-                                            <td>Update software</td>
-                                            <td>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-red">55%</span>
-                                            </td>
-                                            <td>
-                                                <span class="label label-primary">修改</span>
-                                                <span class="label label-danger">删除</span>
-                                            </td>
+                                                <td><?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+</td>
+                                                <td><?php echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
+</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-red"><?php echo $_smarty_tpl->tpl_vars['v']->value['tag'];?>
+</span>
+                                                </td>
+                                                <td>
+                                                    <span class="label label-primary">修改</span>
+                                                    <span class="label label-danger">删除</span>
+                                                </td>
                                         </tr>
+                                                <?php }} ?>
+
+
                                     </table>
                                 </div>
                                 <!-- /.box-body -->

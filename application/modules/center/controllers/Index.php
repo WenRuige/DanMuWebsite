@@ -15,10 +15,16 @@ class IndexController extends Base_Controller_Page{
         $userId = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
         dump($userId);
         //获取用户的个人信息
-        $centerLogic = new Center_Logic_Person();
-        $userInfo    = $centerLogic->getPersonInformation($userId);
+        $centerLogic  = new Center_Logic_Person();
+        $userInfo     = $centerLogic->getPersonInformation($userId);
         //获取栏目信息
         $columnsInfo  = $centerLogic->getColumnInformation();
+        //获取上传的视频
+        $videoInfo    = $centerLogic->getVideoInformation($userId);
+        if($videoInfo['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
+
+            $this->getView()->assign('video',$videoInfo['RES']);
+        }
         if($columnsInfo['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
             $this->getView()->assign('columns',$columnsInfo['RES']);
         }

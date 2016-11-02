@@ -116,4 +116,35 @@ class Center_Logic_Person {
             return $result;
         }
     }
+    //获取视频的相关信息
+    public function getVideoInformation($user_id){
+        try{
+            $videoModel = new VideoModel();
+            $info  = $videoModel->getVideoInformation(['id','title','tag'],['user_id' => $user_id]);
+            if(!empty($info)){
+                $result = array(
+                    "CODE"      => Base_Error::MYSQL_EXECUTE_SUCCESS,
+                    "MESSAGE"   => "插入成功",
+                    "RES"       => $info
+                );
+                return $result;
+            }else{
+                $result = array(
+                    "CODE"      => Base_Error::MYSQL_EXECUTE_ERROR,
+                    "MESSAGE"   => "插入失败",
+                    "RES"       => ''
+                );
+                return $result;
+            }
+
+        }
+        catch(Exception $e){
+            $result  = array(
+                "CODE"      => Base_Error::MYSQL_EXECUTE_ERROR,
+                "MESSAGE"   => "查询失败!"
+            );
+            return $result;
+        }
+
+    }
 }
