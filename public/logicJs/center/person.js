@@ -44,7 +44,7 @@ var videoInfo = {
         //标签
         data['tag']           = $("#tag").val();
         //视频介绍
-        data['introduce']     = $("#introduce").val();
+        data['introduce']     = $("#video_introduce").val();
         console.log(data);
         console.log(data);
         $.post("/center/index/insertVideoInformation",data,function(data){
