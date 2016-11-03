@@ -57,7 +57,7 @@ class IndexController extends Base_Controller_Page{
     public function insertVideoInformationAction(){
         $user_id = Yaf_Session::getInstance()->get(User_Keys::getLoginUserKey());
         //视频名称
-        $inputParam['name']         =  Base_Request::getRequest('name',null);
+        $inputParam['title']         =  Base_Request::getRequest('title',null);
         //栏目Id
         $inputParam['columns_id']   =  Base_Request::getRequest('columns_id',null);
         //视频
@@ -66,6 +66,8 @@ class IndexController extends Base_Controller_Page{
         $inputParam['tag']          =  Base_Request::getRequest('tag',null);
         //视频介绍
         $inputParam['introduce']    =  Base_Request::getRequest('introduce',null);
+        //gif图片上传
+        $inputParam['gif']          =  Base_Request::getRequest('',null);
         //过滤
         $inputParam['user_id']      =  $user_id;
         $inputParam['created_at']   = date('Y-m-d H:i:s');
