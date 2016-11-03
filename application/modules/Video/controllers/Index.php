@@ -19,6 +19,13 @@ class IndexController extends Base_Controller_Page {
             //跳转404界面
             echo "404 DIE!";die;
         }
+        $danmuLogic = new Danmu_Logic_Danmu();
+        $info = $danmuLogic->getDanmuList($id);
+        if($info['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
+            $danmu = $info['RES'];
+            $this->getView()->assign('danmu',$danmu);
+        }
+
         $this->getView()->assign("id",$id);
         $this->getView()->display('video/video.tpl');
     }

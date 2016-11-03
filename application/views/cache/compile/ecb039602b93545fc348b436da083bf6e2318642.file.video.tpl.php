@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-10-28 08:17:16
+<?php /* Smarty version Smarty-3.0.8, created on 2016-11-03 10:19:41
          compiled from "/private/var/www/yaf_personal/application/views/video/video.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:158903283457edce615c8ab7-13850298%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:65064192581a9ebd045e95-31770086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ecb039602b93545fc348b436da083bf6e2318642' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/video/video.tpl',
-      1 => 1475202656,
+      1 => 1478139579,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '158903283457edce615c8ab7-13850298',
+  'nocache_hash' => '65064192581a9ebd045e95-31770086',
   'function' => 
   array (
   ),
@@ -267,7 +267,7 @@ $_smarty_tpl->decodeProperties(array (
         </div>
         <!---资源占位使用--->
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="container" style="float:left;">
                     <div class="demo">
                         <div id="danmup"></div>
@@ -276,7 +276,44 @@ $_smarty_tpl->decodeProperties(array (
             </div>
         </div>
             <div class="col-md-3">
-                右侧弹幕栏
+
+
+                <div class="box">
+                    <div class="box-header">
+
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding" style=" height:515px; overflow:auto">
+                        <table class="table table-condensed">
+                            <tr>
+                                <th style="width: 10px">id</th>
+                                <th>弹幕发送内容</th>
+                                <th>弹幕发送时间</th>
+                                <th>操作</th>
+                            </tr>
+
+                            <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('danmu')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value){
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
+?>
+                                <tr>
+                                    <td><?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+</td>
+                                    <td><?php echo $_smarty_tpl->tpl_vars['v']->value['content'];?>
+</td>
+                                    <td>
+                                        <?php echo $_smarty_tpl->tpl_vars['v']->value['created_at'];?>
+
+                                    </td>
+                                </tr>
+                                <?php }} ?>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
                 </div>
             <script src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
 /js/jquery-2.1.4.min.js"></script>

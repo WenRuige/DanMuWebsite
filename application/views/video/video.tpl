@@ -12,7 +12,7 @@
         </div>
         <!---资源占位使用--->
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="container" style="float:left;">
                     <div class="demo">
                         <div id="danmup"></div>
@@ -21,7 +21,38 @@
             </div>
         </div>
             <div class="col-md-3">
-                右侧弹幕栏
+
+
+                <div class="box">
+                    <div class="box-header">
+
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding" style=" height:515px; overflow:auto">
+                        <table class="table table-condensed">
+                            <tr>
+                                <th style="width: 10px">id</th>
+                                <th>弹幕发送内容</th>
+                                <th>弹幕发送时间</th>
+                                <th>操作</th>
+                            </tr>
+
+                            {foreach from=$danmu key=k item=v}
+                                <tr>
+                                    <td>{$v.id}</td>
+                                    <td>{$v.content}</td>
+                                    <td>
+                                        {$v.created_at}
+                                        {*<div class="progress progress-xs">*}
+                                            {*<div class="progress-bar progress-bar-danger" style="width: 55%"></div>*}
+                                        {*</div>*}
+                                    </td>
+                                </tr>
+                                {/foreach}
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
                 </div>
             <script src="{$stroot}/js/jquery-2.1.4.min.js"></script>
             <script src="{$stroot}/js/jquery.shCircleLoader.js"></script>

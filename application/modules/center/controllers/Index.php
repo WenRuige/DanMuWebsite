@@ -21,6 +21,7 @@ class IndexController extends Base_Controller_Page{
         $columnsInfo  = $centerLogic->getColumnInformation();
         //获取上传的视频
         $videoInfo    = $centerLogic->getVideoInformation($userId);
+
         if($videoInfo['CODE'] == Base_Error::MYSQL_EXECUTE_SUCCESS){
 
             $this->getView()->assign('video',$videoInfo['RES']);
@@ -67,7 +68,11 @@ class IndexController extends Base_Controller_Page{
         //视频介绍
         $inputParam['introduce']    =  Base_Request::getRequest('introduce',null);
         //gif图片上传
-        $inputParam['gif']          =  Base_Request::getRequest('',null);
+        if(!empty($inputParam['video'])){
+            $gif_temp = explode('.',$inputParam['video']);
+            $gif = $gif_temp[0].'.gif';
+        }
+        $inputParam['gif']          =  $gif;
         //过滤
         $inputParam['user_id']      =  $user_id;
         $inputParam['created_at']   = date('Y-m-d H:i:s');

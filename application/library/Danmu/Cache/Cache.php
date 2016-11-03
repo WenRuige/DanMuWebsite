@@ -20,10 +20,10 @@ class Danmu_Cache_Cache extends Base_Redis{
         $DanmuModel = new DanmuModel();
         $redis->lPush('danmu_list',$list);
         $danmuList = $redis->lSize('danmu_list');
-        //为了避免频繁的对Mysql进行写操作
+            //为了避免频繁的对Mysql进行写操作
             //此处使用了redis,数据先进入到redis中然后进行,
             //当redis的数据大于一定数量的时候,将redis的数据存入到mysql中
-        //如果redis中的数据大于5的话
+            //如果redis中的数据大于5的话
             if($danmuList > 5){
                 while($danmuList > 0){
                     $data  =  $redis->rpop('danmu_list');

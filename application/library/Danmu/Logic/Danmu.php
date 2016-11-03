@@ -70,5 +70,30 @@ class Danmu_Logic_Danmu{
             return $result;
         }
     }
+    //获取弹幕列表
+    public function getDanmuList($id){
+        if(empty($id)){ die; }
+        try{
+        $danMuModel = new DanmuModel();
+        $info = $danMuModel->getDanmuList(['id','content','created_at'],['video_id' => $id]);
+            foreach($info as $key => $value){
+                $arr = json_decode($value['content']);
+                $info[$key]['content'] = $arr->text;
+            }
+        $result   = array(
+            'CODE'      => Base_Error::MYSQL_EXECUTE_SUCCESS,
+            'MESSAGE'   => '执行成功!',
+            'RES'       => $info
+         );
+        return $result;
+        }catch(Exception $e){
+            $e->getMessage();
+            $result   = array(
+                'CODE'      => Base_Error::MYSQL_EXECUTE_ERROR,
+                'MESSAGE'   => '执行错误'
+            );
+            return $result;
+        }
+    }
 
 }

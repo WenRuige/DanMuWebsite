@@ -449,9 +449,12 @@
                                                 <td>{$v.id}</td>
                                                 <td>{$v.title}</td>
                                                 <td>
-                                                    <div class="progress progress-xs">
-                                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                                    </div>
+                                                    {if $v.gif}
+                                                        <img src="{$stroot}/uploads/{$v.gif}" width="150px">
+                                                    {else}
+
+                                                    {/if}
+
                                                 </td>
                                                 <td>
                                                     <span class="badge bg-red">{$v.tag}</span>

@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2016-11-02 21:37:15
+<?php /* Smarty version Smarty-3.0.8, created on 2016-11-03 08:38:20
          compiled from "/private/var/www/yaf_personal/application/views/center/center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:13131773905819ec0b3fb4e0-59275123%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1217374107581a86fc91af54-02554388%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '97189565ee8015d7e9c4a2df817f5754a94709c7' => 
     array (
       0 => '/private/var/www/yaf_personal/application/views/center/center.tpl',
-      1 => 1478093834,
+      1 => 1478133498,
       2 => 'file',
     ),
     '0f9d185f525c7eb0c6d1226464db6c6a5ee41f93' => 
@@ -17,7 +17,7 @@ $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13131773905819ec0b3fb4e0-59275123',
+  'nocache_hash' => '1217374107581a86fc91af54-02554388',
   'function' => 
   array (
   ),
@@ -727,9 +727,14 @@ if ($_smarty_tpl->_count($_from) > 0){
                                                 <td><?php echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
 </td>
                                                 <td>
-                                                    <div class="progress progress-xs">
-                                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                                    </div>
+                                                    <?php if ($_smarty_tpl->tpl_vars['v']->value['gif']){?>
+                                                        <img src="<?php echo $_smarty_tpl->getVariable('stroot')->value;?>
+/uploads/<?php echo $_smarty_tpl->tpl_vars['v']->value['gif'];?>
+" width="150px">
+                                                    <?php }else{ ?>
+
+                                                    <?php }?>
+
                                                 </td>
                                                 <td>
                                                     <span class="badge bg-red"><?php echo $_smarty_tpl->tpl_vars['v']->value['tag'];?>

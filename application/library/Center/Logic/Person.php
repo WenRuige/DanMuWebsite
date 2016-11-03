@@ -120,7 +120,12 @@ class Center_Logic_Person {
     public function getVideoInformation($user_id){
         try{
             $videoModel = new VideoModel();
-            $info  = $videoModel->getVideoInformation(['id','title','tag'],['user_id' => $user_id]);
+            $info  = $videoModel->getVideoInformation(['id','title','tag','gif'],['user_id' => $user_id]);
+            foreach($info as $key => $value){
+                if(!empty($info[$key]['gif'])){
+                    $info[$key]['gif'] = $user_id.'/'.$info[$key]['gif'];
+                }
+            }
             if(!empty($info)){
                 $result = array(
                     "CODE"      => Base_Error::MYSQL_EXECUTE_SUCCESS,
